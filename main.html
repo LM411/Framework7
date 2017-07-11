@@ -19,11 +19,6 @@
   <link rel="icon" href="img/icon.png">
   <link rel="manifest" href="css/manifest.json">
   <!--Scripts-->
-  <script type="text/javascript" src="js/my-app.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function({})); 
-  </script>
-
 </head>
 <body  class="theme-teal">
 <div class = "views">
@@ -59,54 +54,8 @@
            <div class = "tabs">
               <div id = "tab1" class = "page-content with-subnavbar tab active">
                  <div class = "content-block">
-                    <div class="card ks-facebook-card">
-                      <div class="card-header">
-                        <div class="ks-facebook-avatar"><img src="img/selibeng.png" width="34" height="34"/></div>
-                        <div class="ks-facebook-name">Selibeng.com</div>
-                        <div class="ks-facebook-date">Monday at 2:15 PM</div>
-                      </div>
-                      <div class="card-content"> 
-                        <div class="card-content-inner">
-                          <p>MIS Specialist at PSI</p><img src="img/psi.jpg" width="100%"/>
-                          <p class="color-gray">Marks: 112 &nbsp;&nbsp; Views: 43</p>
-                        </div>
-                      </div>
-                      <div class="card-footer">
-                      <a href="www.selibeng.com/mis-specialist-at-psi/" class="link">Mark</a>
-                      <a href="www.selibeng.com/mis-specialist-at-psi/" class="link">Remove</a>
-                      <a href="https://www.selibeng.com/mis-specialist-at-psi/" class="link external">View</a></div>
-                    </div>
-
-                    <div class="card ks-facebook-card">
-                      <div class="card-header">
-                        <div class="ks-facebook-avatar"><img src="img/selibeng.png" width="34" height="34"/></div>
-                        <div class="ks-facebook-name">Selibeng.com</div>
-                        <div class="ks-facebook-date">Monday at 5:15 PM</div>
-                      </div>
-                      <div class="card-content"> 
-                        <div class="card-content-inner">
-                          <p>Marketing Head B at FNB Lesotho</p><img src="img/fnb.jpg" width="100%"/>
-                          <p class="color-gray">Marks: 112 &nbsp;&nbsp; Views: 43</p>
-                        </div>
-                      </div>
-                      <div class="card-footer"><a href="#" class="link">Mark</a><a href="#" class="link">Remove</a><a href="#" class="link">View</a></div>
-                    </div>
-
-                    <div class="card ks-facebook-card">
-                      <div class="card-header">
-                        <div class="ks-facebook-avatar"><img src="img/selibeng.png" width="34" height="34"/></div>
-                        <div class="ks-facebook-name">Selibeng.com</div>
-                        <div class="ks-facebook-date">Monday at 1:15 PM</div>
-                      </div>
-                      <div class="card-content"> 
-                        <div class="card-content-inner">
-                          <p>Lecturer in the Department of Statistics and Demography at NUL</p><img src="img/nullesotho.jpg" width="100%"/>
-                          <p class="color-gray">Marks: 112 &nbsp;&nbsp; Views: 43</p>
-                        </div>
-                      </div>
-                      <div class="card-footer"><a href="#" class="link">Mark</a><a href="#" class="link">Remove</a><a href="#" class="link">View</a></div>
-                    </div>
-                    <div>
+                   <!-- Content Here -->
+                 <div>
                       <h1>&nbsp;</h1>
                     </div>
                  </div>
@@ -221,33 +170,17 @@
         <span class="tabbar-label">more</span>
     </a>
   </div>
-</div>
-
-
-<script type = "text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/framework7/1.4.2/js/framework7.min.js"></script>
-<script>
-  // here initialize the app
-  var myApp = new Framework7();
-
-  // If your using custom DOM library, then save it to $$ variable
-  var $$ = Dom7;
-
-  // Add the view
-  var mainView = myApp.addView('.view-main', {
-    // enable the dynamic navbar for this view:
-    dynamicNavbar: true
-  });
-
-  var myApp = new Framework7();
- 
-  var $$ = Dom7;
-   
-  $$('.alert-text').on('click', function () {
-      myApp.alert('Services This Contract applies to LinkedIn.com, LinkedIn-branded apps, Slideshare, LinkedIn Learning and other LinkedIn-related sites, apps, communications and other services that state that they are offered under this Contract (“Services”), including the offsite collection of data for those Services, such as our ads and the “Apply with LinkedIn” and “Share with LinkedIn” plugins. Registered users of our Services are “Members” and unregistered users are “Visitors”. This Contract applies to both.','Terms & Conditions', function () {
-          myApp.alert('Please note by continuing to use our app you have agreed to the terms and conditions governing the application.','Spane | Work')
-      });
-  });
-</script>        
+  <!--  -->
+ <!-- Path to Framework7 Library JS-->
+    <!-- <script type="text/javascript" src="js/framework7.min.js"></script> -->
+    <!-- <script type="text/javascript" src="js/kitchen-sink.js"></script> -->
+    <!-- <script type="text/javascript" src="js/jquery.js"></script> -->
+    <!-- Path to your app js-->
+    <!-- <script type="text/javascript" src="js/my-app.js"></script> -->
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <!-- <script type="text/javascript" src="js/kitchen-sink.js"></script> -->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <!-- Path to your app js-->
+    <script type="text/javascript" src="js/my-app.js"></script>
 </body>
-
 </html>
