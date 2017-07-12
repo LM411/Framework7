@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="theme-color" content="#2196f3">
+  <title>Spane | Work</title>
+  <!--Stylesheet import-->
+  <link rel="stylesheet" href="css/framework7.material.css">
+  <link rel="stylesheet" href="css/framework7.material.colors.css">
+  <link href="http://fonts.googleapis.com/css?family=Roboto:400,300,500,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/material-icons.css">
+  <link rel="stylesheet" href="css/framework7-icons.css">
+  <link rel="stylesheet" href="css/my-app.css">
+  <link rel="stylesheet" href="css/kitchen-sink.css">
+  <link rel="icon" href="img/icon.png">
+  <link rel="manifest" href="css/manifest.json">
+</head>
+
+<style type="text/css">
+  .form{
+    margin: auto 5% auto 5%;
+  }
+  #logo{
+    margin-top: 10%;
+  }
+</style>
+<body class="theme-teal">
+<div class="views">
+    <!-- Your main view -->
+  <div class="view view-main">
+    <div data-page="login-screen-embedded" class="page">
+      <div class="page-content login-screen-content">
+        <div id="logo" class="login-screen-title"><img src="img/logo_black.png" style="height: 120px"></div>
+        <form class="form">
+          <div class="list-block inputs-list">
+            <ul>
+              <li class="item-content">
+                <div class="item-inner"> 
+                  <div class="item-title floating-label">&nbsp;Username</div>
+                  <div class="item-input">
+                    <input type="text" name="username" style="border-bottom: 1px solid rgba(0,0,0,0.5);"/>
+                  </div>
+                </div>
+              </li>
+              <li class="item-content">
+                <div class="item-inner"> 
+                  <div class="item-title floating-label">Password</div>
+                  <div class="item-input">
+                    <input type="password" name="password" style="border-bottom: 1px solid rgba(0,0,0,0.5);"/>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div ><a href="#" class="button button-big">Sign In</a></div>
+          <div>
+            <div class="list-block-label">
+            <a href="signup.html" class="item-link close-panel external" class="button button-big button-fill">
+              <span class="button button-big button-fill">
+                Sign Up
+              </span>
+            </a></div>
+            <center><a href="#" data-popup=".popup-about" class="open-popup"  style="color: #000;">Terms & Conditions</a></center>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+<!-- About Popup -->
+<div class="popup popup-about">
+  <div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="#" class="link close-popup">
+                <i class="icon icon-back"></i>
+                <span></span>
+            </a>
+        </div>
+        <div class="right">
+            <a href="#" class="link">
+                <i class="icon icon-bars"></i>
+                <span>Menu</span>
+            </a>
+        </div>
+      </div>
+  </div>
+  <div>
+    <div class="content-title"></div>
+    <p></p>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+  var $$ = Dom7;
+  $$('.popup-about').on('popup:opened', function () {
+    console.log('About Popup opened')
+  });
+  $$('.popup-about').on('popup:close', function () {
+    console.log('About Popup is closing')
+  });
+</script>
+<script type="text/javascript" src="js/framework7.min.js"></script>
+<script type="text/javascript" src="js/kitchen-sink.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/my-app.js"></script>
+  </body>
+</html>
