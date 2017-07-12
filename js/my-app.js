@@ -77,7 +77,7 @@ function createContentPage() {
                   $$('.content-block-main').append('<div class="card ks-facebook-card">' +
                   	'<div class="card-header">' +
                         '<div class="ks-facebook-avatar"><img src="img/selibeng.png" width="34" height="34"/></div>' +
-                        '<div class="ks-facebook-name">Sel<div></div>ibeng.com</div>' +
+                        '<div class="ks-facebook-name">Selibeng.com</div>' +
                         '<div class="ks-facebook-date">'+value.date+'</div>' +
                       '</div>' +
                       '<div class="card-content">' + 
@@ -89,7 +89,7 @@ function createContentPage() {
                       '<div class="card-footer">' +
                       '<a href="www.selibeng.com/mis-specialist-at-psi/" class="link">Mark</a>' +
                       '<a href="www.selibeng.com/mis-specialist-at-psi/" class="link">Remove</a>' +
-                      '<a href="posts.html?postid='+value.id+'" class="link external">View</a></div>' +
+                      '<a href="posts.html?postid='+value.id+'" class="item-link external">View</a></div>' +
                     '<div class="item-inner"><div class="item-title"></div>');
                   //console.log(value.title.rendered);
                   //console.log(value.id);
