@@ -132,29 +132,33 @@
               <div class="tabs">
                 <div id="tab1" class="page-content tab active">
                 <h3>&nbsp;</h3>
+                <form data-search-list=".list-block-search" data-search-in=".item-title" class="searchbar searchbar-init">
+                  <div class="searchbar-input">
+                    <input type="search" placeholder="Search"><a href="#" class="searchbar-clear"></a>
+                  </div><a href="#" class="searchbar-cancel">Cancel</a>
+                </form>
+                <!-- This block will be displayed if nothing found -->
+                <div class="content-block searchbar-not-found">
+                  <div class="content-block-inner">Nothing found</div>
+                </div>
                   <div class="content-block-main">
                   
                     <!-- Content Here -->
 
                   </div>
-                  <h1>&nbsp;</h1>
+                  <h2>&nbsp;</h2>
                   <h3>&nbsp;</h3>
                 </div>
                 <div id="tab2" class="page-content tab">
                   <div class="content-block">
-                    <p>This is tab 2 content</p>
-                    <div class = "content-block">
-                      <p><h3>Favourite Posts</h3></p>
-                      <div class="card">
-                          <div class="card-header">Header</div>
-                          <div class="card-content">
-                              <div class="card-content-inner">Card content</div>
-                          </div>
-                          <div class="card-footer">Footer</div>
-                      </div> 
-                     </div>
+                  <h3>&nbsp;</h3>
+                    <div class = "content-block-main">
+                      <!--Favourite Posts-->  
+                    </div>
+                  <h1>&nbsp;</h1>
                   </div>
                 </div>
+                
                 <div id="tab3" class="page-content tab">
                   <div class="content-block">
                   <p><h3>&nbsp;</h3></p>
@@ -162,47 +166,54 @@
                       <div class="card-header"><h3><i class="f7-icons">document_text_fill</i> Biography</h3></div>
                       <div class="card-content">
                         <div class="card-content-inner">
-                          <table>
-                            <tr>
-                              <td>Name&nbsp;&nbsp;</td>
-                              <td>Lehlohonolo</td>
-                            </tr>
-                            <tr>
-                              <td>Surname&nbsp;&nbsp;</td>
-                              <td>Makoti</td>
-                            </tr>
-                            <tr>
-                              <td>Contacts&nbsp;&nbsp;</td>
-                              <td>+266 67239722</td>
-                            </tr>
-                            <tr>
-                              <td>Email&nbsp;&nbsp;</td>
-                              <td>lehlohonolomakoti@gmail.com</td>
-                            </tr>
-                            </tr>
-                          </table>
+                          <form id="userprofile-form" class="store-data list-block">
+                            <ul>
+                              <li>
+                                <div class="item-content">
+                                  <div class="item-media"><i class="icon material-icons">person_outline</i></div>
+                                  <div class="item-inner"> 
+                                    <div class="item-input">
+                                      <input type="text" placeholder="My name" name="name"/>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="item-content">
+                                  <div class="item-media"><i class="icon material-icons">email</i></div>
+                                  <div class="item-inner"> 
+                                    <div class="item-input">
+                                      <input type="email" placeholder="My E-mail" name="email"/>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                            </ul>
+                          </form>
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="card-header"><h3><i class="f7-icons">briefcase_fill</i> Profession</h3></div>
+                      <div class="card-content">
+                        <div class="card-content-inner">
+                          <form id="profession-form" class="store-data list-block">
+                            <ul>
+                              <li>
+                                <div class="item-content">
+                                  <div class="item-inner"> 
+                                    <div class="item-input">
+                                      <input type="text" placeholder="My Profession" name="profession"/>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                            </ul>
+                          </form>
                         </div>
                       </div>
                     </div>
                     <p></p>
-                    <div class="card">
-                      <div class="card-header"><h3><i class="f7-icons">card_fill</i> Profession</h3></div>
-                      <div class="card-content">
-                          <div class="card-content-inner">
-                            <table>
-                              <tr>
-                                <td><i class="f7-icons">briefcase</i>&nbsp;&nbsp;</td>
-                                <td>Computer Scientist</td>
-                              </tr>
-                              <tr>
-                                <td><i class="f7-icons">add_round</i>&nbsp;&nbsp;</td>
-                                <td>Web Developer</td>
-                              </tr>
-                              
-                            </table>
-                          </div>
-                      </div>
-                    </div>
+                    
                     <div>
                         <center>
                           <h1>&nbsp;</h1>
