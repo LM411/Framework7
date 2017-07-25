@@ -19,6 +19,24 @@
   <link rel="icon" href="img/icon.png">
   <link rel="manifest" href="css/manifest.json">
 </head>
+<script type="text/javascript">
+  // Initialize your app
+  var myApp = new Framework7();
+
+  // Export selectors engine
+  var $$ = Dom7;
+  function getData(){
+    var storedData = myApp.formGetData('userprofile-form');
+    if(storedData) {
+      var JsonString = JSON.stringify(storedData)
+      var parseObject = JSON.parse(JsonString);
+      alert(parseObject.profession);
+    }
+    else {
+      alert('There is no stored data for this form yet. Try to change any field')
+    }
+  }
+</script>
 <body class="theme-teal">
     <div class="statusbar-overlay"></div>
     <div class="panel-overlay"></div>
@@ -185,21 +203,19 @@
                                   </div>
                                 </div>
                               </li>
-                            </ul>
-                          </form>
-                        </div>
-                      </div>
-                      <hr>
-                      <div class="card-header"><h3><i class="f7-icons">briefcase_fill</i> Profession</h3></div>
-                      <div class="card-content">
-                        <div class="card-content-inner">
-                          <form id="profession-form" class="store-data list-block">
-                            <ul>
                               <li>
                                 <div class="item-content">
+                                  <div class="item-media"><i class="icon material-icons">folder_shared</i></div>
                                   <div class="item-inner"> 
                                     <div class="item-input">
-                                      <input type="text" placeholder="My Profession" name="profession"/>
+                                      <select name="profession">
+                                        <option>Computer Science</option>
+                                        <option>Information Technology</option>
+                                        <option>Accounting</option>
+                                        <option>Counselling</option>
+                                        <option>Secretary</option>
+                                        <option>Mining</option>
+                                      </select>
                                     </div>
                                   </div>
                                 </div>
@@ -209,6 +225,7 @@
                         </div>
                       </div>
                     </div>
+                    <p><a href="#" class="button button-fill" onClick="getData()">Save</a></p>
                     <p></p>
                     
                     <div>
