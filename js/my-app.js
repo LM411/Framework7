@@ -34,31 +34,39 @@ var getUrlParameter = function getUrlParameter(sParam) {
     }
 };
 
+var storedData = myApp.formGetData('userprofile-form');
+var JsonString = JSON.stringify(storedData);
+var parseObject = JSON.parse(JsonString);
+//alert(parseObject.profession);
+function refresh(){
+  window.location.reload();
+}
+
 // Generate dynamic page
 var dynamicPageIndex = 0;
 function createContentPage() {
 	mainView.router.loadContent(
-        '<!-- Top Navbar-->' +
-        '<div class="navbar">' +
-        '  <div class="navbar-inner">' +
-        '    <div class="left"><a href="#" class="back link"><i class="icon icon-back"></i><span>Back</span></a></div>' +
-        '    <div class="center sliding">Dynamic Page ' + (++dynamicPageIndex) + '</div>' +
-        '  </div>' +
-        '</div>' +
-        '<div class="pages">' +
-        '  <!-- Page, data-page contains page name-->' +
-        '  <div data-page="dynamic-pages" class="page">' +
-        '    <!-- Scrollable page content-->' +
-        '    <div class="page-content">' +
-        '      <div class="content-block">' +
-        '        <div class="content-block-inner">' +
-        '          <p>Here is a dynamic page created on ' + new Date() + ' !</p>' +
-        '          <p>Go <a href="#" class="back">back</a> or go to <a href="services.html">Services</a>.</p>' +
-        '        </div>' +
-        '      </div>' +
-        '    </div>' +
-        '  </div>' +
-        '</div>'
+      '<!-- Top Navbar-->' +
+      '<div class="navbar">' +
+      '  <div class="navbar-inner">' +
+      '    <div class="left"><a href="#" class="back link"><i class="icon icon-back"></i><span>Back</span></a></div>' +
+      '    <div class="center sliding">Dynamic Page ' + (++dynamicPageIndex) + '</div>' +
+      '  </div>' +
+      '</div>' +
+      '<div class="pages">' +
+      '  <!-- Page, data-page contains page name-->' +
+      '  <div data-page="dynamic-pages" class="page">' +
+      '    <!-- Scrollable page content-->' +
+      '    <div class="page-content">' +
+      '      <div class="content-block">' +
+      '        <div class="content-block-inner">' +
+      '          <p>Here is a dynamic page created on ' + new Date() + ' !</p>' +
+      '          <p>Go <a href="#" class="back">back</a> or go to <a href="services.html">Services</a>.</p>' +
+      '        </div>' +
+      '      </div>' +
+      '    </div>' +
+      '  </div>' +
+      '</div>'
     );
 	return;
 }
@@ -87,17 +95,17 @@ function createContentPage() {
                         '</div>' +
                       '</div>' +
                       '<div class="card-footer">' +
-                      '<a href="www.selibeng.com/mis-specialist-at-psi/" class="link">Mark</a>' +
-                      '<a href="www.selibeng.com/mis-specialist-at-psi/" class="link">Remove</a>' +
+                      '<a href="www.selibeng.com/mis-specialist-at-psi/" class="link"></a>' +
+                      '<a href="www.selibeng.com/mis-specialist-at-psi/" class="link"></a>' +
                       '<a href="posts.html?postid='+value.id+'" class="item-link external">View</a></div>' +
                     '<div class="item-inner"><div class="item-title"></div>');
-                  //console.log(value.title.rendered);
+                  console.log(parseObject.profession);
                   //console.log(value.id);
                 });
             },
             error: function(error){
                 $$('.content-block-main').append('<div class="item-content">' + 
-                    '<div class="item-title"><div class="item-media"><i class="icon icon-f7"></i></div> there is a problem loading data, you might wanna check you internet connection and retry.</div>');
+                    '<div class="item-title"><div class="item-media"></div><center><img style="height:350px" src="img/error.png"/><br/><a onClick="refresh()">REFRESH PAGE</a></center></div>');
                 console.log(error);
             }
 
