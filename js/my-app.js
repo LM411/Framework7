@@ -33,11 +33,11 @@ var getUrlParameter = function getUrlParameter(sParam) {
         }
     }
 };
-
+/*
 var storedData = myApp.formGetData('userprofile-form');
 var JsonString = JSON.stringify(storedData);
 var parseObject = JSON.parse(JsonString);
-//alert(parseObject.profession);
+//alert(parseObject.profession);*/
 function refresh(){
   window.location.reload();
 }

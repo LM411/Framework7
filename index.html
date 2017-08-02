@@ -20,11 +20,6 @@
   <link rel="manifest" href="css/manifest.json">
 </head>
 <script type="text/javascript">
-  // Initialize your app
-  var myApp = new Framework7();
-
-  // Export selectors engine
-  var $$ = Dom7;
   function getData(){
     var storedData = myApp.formGetData('userprofile-form');
     if(storedData) {
@@ -37,6 +32,7 @@
     }
   }
 </script>
+
 <body class="theme-teal">
     <div class="statusbar-overlay"></div>
     <div class="panel-overlay"></div>
