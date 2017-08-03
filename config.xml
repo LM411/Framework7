@@ -10,7 +10,7 @@
   <name>Spane|Work</name>
 
   <description>
-      An example for phonegap build app which wont show up in the playstore. 
+      A job seeking free platform to help better your chances for that dream job
   </description>
 
   <author href="https://nsgplesotho.com" email="lehlohonolomakoti@nsgplesotho.com">
@@ -36,7 +36,7 @@
   <plugin name="cordova-universal-clipboard" source="npm"/>
   <plugin name="phonegap-plugin-barcodescanner" source="npm"/>
   <plugin name="cordova-plugin-x-toast" />
-  
+
   <splash platform="android" qualifier="port-ldpi" src="res/screen/android/screen-ldpi-portrait.png" />
   <splash platform="android" qualifier="port-mdpi" src="res/screen/android/screen-mdpi-portrait.png" />
   <splash platform="android" qualifier="port-hdpi" src="res/screen/android/screen-hdpi-portrait.png" />
