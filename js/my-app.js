@@ -99,7 +99,7 @@ function createContentPage() {
                       '<a href="www.selibeng.com/mis-specialist-at-psi/" class="link"></a>' +
                       '<a href="posts.html?postid='+value.id+'" class="item-link external">View</a></div>' +
                     '<div class="item-inner"><div class="item-title"></div>');
-                  console.log(parseObject.profession);
+                 //console.log(parseObject.profession);
                   //console.log(value.id);
                 });
             },
