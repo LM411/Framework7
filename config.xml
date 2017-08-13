@@ -21,7 +21,6 @@
   
   <plugin name="cordova-plugin-splashscreen" source="npm" />
   <preference name="orientation" value="portrait" />
-  <preference name="fullscreen" value="false" />
   <preference name="KeepRunning" value="false"/>
   <preference name="SplashScreen" value="screen"/>
   <preference name="android-build-tool" value="gradle" />  

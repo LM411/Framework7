@@ -10,13 +10,15 @@ var mainView = myApp.addView('.view-main', {
     dynamicNavbar: true
 });
 
-// Callbacks to run specific code for specific pages, for example for About page:
-myApp.onPageInit('about', function (page) {
-    // run createContentPage func after link was clicked
-    $$('.create-page').on('click', function () {
-        createContentPage();
-    });
-});
+var calendarDefault_1 = myApp.calendar({
+    input: '#calendar-default_1',
+});  
+var calendarDefault_2 = myApp.calendar({
+    input: '#calendar-default_2',
+});  
+var calendarDefault_3 = myApp.calendar({
+    input: '#calendar-default_3',
+});  
 
 //Get parameters from URL
 var getUrlParameter = function getUrlParameter(sParam) {
@@ -33,11 +35,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
         }
     }
 };
-/*
-var storedData = myApp.formGetData('userprofile-form');
-var JsonString = JSON.stringify(storedData);
-var parseObject = JSON.parse(JsonString);
-//alert(parseObject.profession);*/
+
 function refresh(){
   window.location.reload();
 }
@@ -45,7 +43,7 @@ function refresh(){
 // Generate dynamic page
 var dynamicPageIndex = 0;
 function createContentPage() {
-	mainView.router.loadContent(
+  mainView.router.loadContent(
       '<!-- Top Navbar-->' +
       '<div class="navbar">' +
       '  <div class="navbar-inner">' +
@@ -68,7 +66,7 @@ function createContentPage() {
       '  </div>' +
       '</div>'
     );
-	return;
+  return;
 }
 
 
@@ -77,13 +75,13 @@ function createContentPage() {
 
  $.ajax({
             // type: 'GET',
-            url: rootURL + '/posts?filter[posts_per_page]=50',
+            url: rootURL + '/posts?filter[posts_per_page]=400',
             // dataType: 'json',
             success: function(data){
                 
                 $.each(data, function(index, value) {
-                  $$('.content-block-main').append('<div class="card ks-facebook-card">' +
-                  	'<div class="card-header">' +
+                  $$('#content-block-main').append('<div class="card ks-facebook-card">' +
+                    '<div class="card-header">' +
                         '<div class="ks-facebook-avatar"><img src="img/selibeng.png" width="34" height="34"/></div>' +
                         '<div class="ks-facebook-name">Selibeng.com</div>' +
                         '<div class="ks-facebook-date">'+value.date+'</div>' +
@@ -95,9 +93,10 @@ function createContentPage() {
                         '</div>' +
                       '</div>' +
                       '<div class="card-footer">' +
-                      '<a href="www.selibeng.com/mis-specialist-at-psi/" class="link"></a>' +
-                      '<a href="www.selibeng.com/mis-specialist-at-psi/" class="link"></a>' +
-                      '<a href="posts.html?postid='+value.id+'" class="item-link external">View</a></div>' +
+                      '<a data-text="To get more posts download this app..." data-link="'+value.link+'" class="whatsapp w3_whatsapp_btn w3_whatsapp_btn_large">'+
+                       '<img src="img/share.png" height="34px">'+
+                      '</a>'+
+                      '<a href="posts.html?postid='+value.id+'" class="button item-link external">View</a></div>' +
                     '<div class="item-inner"><div class="item-title"></div>');
                  //console.log(parseObject.profession);
                   //console.log(value.id);
@@ -112,8 +111,8 @@ function createContentPage() {
  });
 
  
- 	var postid = getUrlParameter('postid');
- 	if (postid != null){
+  var postid = getUrlParameter('postid');
+  if (postid != null){
          $.ajax({
             // type: 'GET',
             url: rootURL + '/posts/'+postid,
@@ -121,7 +120,7 @@ function createContentPage() {
             success: function(data){
            
                   $$('.post-content-block').append('<div class="card ks-facebook-card">' +
-                  	'<div class="card-header">' +
+                    '<div class="card-header">' +
                         '<div class="ks-facebook-avatar"><img src="img/selibeng.png" width="34" height="34"/></div>' +
                         '<div class="ks-facebook-name">Selibeng.com</div>' +
                         '<div class="ks-facebook-date">'+data.date+'</div>' +
@@ -144,5 +143,5 @@ function createContentPage() {
                 console.log(error);
             }
 
- 	});
+  });
 };

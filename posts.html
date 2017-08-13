@@ -19,6 +19,17 @@
   <link rel="icon" href="img/icon.png">
   <link rel="manifest" href="css/manifest.json">
 </head>
+<script>
+    $(function(){
+        $('body').fadeIn();
+        $('.myBtn').click(function(){
+            url = $(this).attr('id') + '.html';
+            $('body').fadeOut(function(){
+                window.location = url;
+            });     
+        });
+    });
+</script>
 <body class="theme-teal">
     <div class="statusbar-overlay"></div>
     <div class="panel-overlay"></div>
@@ -113,7 +124,6 @@
             <div class="toolbar tabbar">
               <div class="toolbar-inner">
               <a href="#tab1" class="active tab-link">Jobs</a>
-              <a href="#tab2" class="tab-link">Library</a>
               <a href="#tab3" class="tab-link">Profile</a></div>
             </div>
             <!--Main screen content-->
@@ -137,21 +147,7 @@
                   <h3>&nbsp;</h3>
                   <h3>&nbsp;</h3>
                 </div>
-                <div id="tab2" class="page-content tab">
-                  <div class="content-block">
-                    <p>This is tab 2 content</p>
-                    <div class = "content-block">
-                      <p><h3>Favourite Posts</h3></p>
-                      <div class="card">
-                          <div class="card-header">Header</div>
-                          <div class="card-content">
-                              <div class="card-content-inner">Card content</div>
-                          </div>
-                          <div class="card-footer">Footer</div>
-                      </div> 
-                     </div>
-                  </div>
-                </div>
+
                 <div id="tab3" class="page-content tab">
                   <div class="content-block">
                   <p><h3>&nbsp;</h3></p>
@@ -159,60 +155,53 @@
                       <div class="card-header"><h3><i class="f7-icons">document_text_fill</i> Biography</h3></div>
                       <div class="card-content">
                         <div class="card-content-inner">
-                          <table>
-                            <tr>
-                              <td>Name&nbsp;&nbsp;</td>
-                              <td>Lehlohonolo</td>
-                            </tr>
-                            <tr>
-                              <td>Surname&nbsp;&nbsp;</td>
-                              <td>Makoti</td>
-                            </tr>
-                            <tr>
-                              <td>Contacts&nbsp;&nbsp;</td>
-                              <td>+266 67239722</td>
-                            </tr>
-                            <tr>
-                              <td>Email&nbsp;&nbsp;</td>
-                              <td>lehlohonolomakoti@gmail.com</td>
-                            </tr>
-                            </tr>
-                          </table>
+                          <form id="userprofile-form" class="store-data list-block">
+                            <ul>
+                              <li>
+                                <div class="item-content">
+                                  <div class="item-media"><i class="icon material-icons">person_outline</i></div>
+                                  <div class="item-inner"> 
+                                    <div class="item-input">
+                                      <input type="text" placeholder="My name" name="name"/>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="item-content">
+                                  <div class="item-media"><i class="icon material-icons">email</i></div>
+                                  <div class="item-inner"> 
+                                    <div class="item-input">
+                                      <input type="email" placeholder="My E-mail" name="email"/>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="item-content">
+                                  <div class="item-media"><i class="icon material-icons">folder_shared</i></div>
+                                  <div class="item-inner"> 
+                                    <div class="item-input">
+                                      <select name="profession">
+                                        <option>Computer Science</option>
+                                        <option>Information Technology</option>
+                                        <option>Accounting</option>
+                                        <option>Counselling</option>
+                                        <option>Secretary</option>
+                                        <option>Mining+</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                            </ul>
+                          </form>
                         </div>
                       </div>
                     </div>
+                    <p><a href="#" class="button button-fill" onClick="getData()">Save</a></p>
                     <p></p>
-                    <div class="card">
-                      <div class="card-header"><h3><i class="f7-icons">card_fill</i> Profession</h3></div>
-                      <div class="card-content">
-                          <div class="card-content-inner">
-                            <table>
-                              <tr>
-                                <td><i class="f7-icons">briefcase</i>&nbsp;&nbsp;</td>
-                                <td>Computer Scientist</td>
-                              </tr>
-                              <tr>
-                                <td><i class="f7-icons">add_round</i>&nbsp;&nbsp;</td>
-                                <td>Web Developer</td>
-                              </tr>
-                              
-                            </table>
-                          </div>
-                      </div>
-                    </div>
-                    <div>
-                        <center>
-                          <h1>&nbsp;</h1>
-                            <a href="#" class="alert-text">
-                              <img src="img/logo_black.png" style="height: 80px">
-                              <p>
-                                Terms & Conditions
-                              </p>
-                            </a>
-                            <!-- Terms of use -->
-                          </center>
-                          <h1>&nbsp;</h1>
-                      </div>
+                  
                   </div>
                 </div>
               </div>
@@ -221,23 +210,23 @@
             <!--Bottom toolbar menu-->
             <div class="toolbar toolbar-bottom tabbar tabbar-labels">
               <div class="toolbar-inner">
-                <a href="#tab1" class="tab-link active">
-                    <i class="f7-icons">share</i>
-                    <span class="tabbar-label">Share</span>
+                <a href="#" class="tab-link">
+                    <i class="f7-icons">search</i>
+                    <span class="tabbar-label">Search</span>
                 </a>
-                <a href="#tab2" class="tab-link">
-                    <i class="f7-icons">trash</i>
-                    <span class="tabbar-label">Delete</span>
+                <a href="#" class="tab-link">
+                    <i class="f7-icons">document_outline</i>
+                    <span class="tabbar-label"><a href="" class="myBtn" id="posts.html">Help</a></span>
                 </a>
-                <a href="#tab3" class="tab-link">
+                <a href="#" class="tab-link">
                     <i class="f7-icons">
-                       drawer_fill
+                       today
                     </i>
-                    <span class="tabbar-label">Archive</span>
+                    <span class="tabbar-label">Calendar</span>
                 </a>
-                <a href="#tab1" class="tab-link">
+                <a href="#" class="tab-link active">
                     <i class="f7-icons">more</i>
-                    <span class="tabbar-label">more</span>
+                    <span class="tabbar-label">More</span>
                 </a>
               </div>
             </div>
@@ -247,8 +236,8 @@
         </div>
       </div>
     </div>
-      <script type="text/javascript" src="js/framework7.min.js"></script>
-    <!-- <script type="text/javascript" src="js/kitchen-sink.js"></script> -->
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <script type="text/javascript" src="js/kitchen-sink.js"></script>
     <script type="text/javascript" src="js/jquery.js"></script>
     <!-- Path to your app js-->
     <script type="text/javascript" src="js/my-app.js"></script>
