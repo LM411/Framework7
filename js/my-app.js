@@ -118,24 +118,22 @@ function createContentPage() {
             url: rootURL + '/posts/'+postid,
             // dataType: 'json',
             success: function(data){
-           
-                  $$('.post-content-block').append('<div class="card ks-facebook-card">' +
-                    '<div class="card-header">' +
-                        '<div class="ks-facebook-avatar"><img src="img/selibeng.png" width="34" height="34"/></div>' +
-                        '<div class="ks-facebook-name">Selibeng.com</div>' +
-                        '<div class="ks-facebook-date">'+data.date+'</div>' +
-                      '</div>' +
-                      '<div class="card-content">' + 
-                        '<div class="card-content-inner">' +
-                        '<p><h3>'+data.title.rendered+'</h3></p>' +
-                         '<p>'+data.content.rendered+'</p>' +
-                         '<p>More Content: <a href="'+data.link+'">'+data.link+'</a></p>' +
-                          // '<p class="color-gray">Views: '+value.link+'</p>' +
-                        '</div>' +
-                      '</div>' +
-                    '<div class="item-inner"><div class="item-title"></div>');
-                  //console.log(value.title);
-                
+              $$('.post-content-block').append('<div class="card ks-facebook-card">' +
+                '<div class="card-header">' +
+                    '<div class="ks-facebook-avatar"><img src="img/selibeng.png" width="34" height="34"/></div>' +
+                    '<div class="ks-facebook-name">Selibeng.com</div>' +
+                    '<div class="ks-facebook-date">'+data.date+'</div>' +
+                  '</div>' +
+                  '<div class="card-content">' + 
+                    '<div class="card-content-inner">' +
+                    '<p><h3>'+data.title.rendered+'</h3></p>' +
+                     '<p>'+data.content.rendered+'</p>' +
+                     '<p>More Content: <a href="'+data.link+'">'+data.link+'</a></p>' +
+                      // '<p class="color-gray">Views: '+value.link+'</p>' +
+                    '</div>' +
+                  '</div>' +
+                '<div class="item-inner"><div class="item-title"></div>');
+              //console.log(value.title);
             },
             error: function(error){
                 $$('.post-content-block').append('<div class="item-content">' + 
