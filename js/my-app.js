@@ -10,16 +10,6 @@ var mainView = myApp.addView('.view-main', {
     dynamicNavbar: true
 });
 
-var calendarDefault_1 = myApp.calendar({
-    input: '#calendar-default_1',
-});  
-var calendarDefault_2 = myApp.calendar({
-    input: '#calendar-default_2',
-});  
-var calendarDefault_3 = myApp.calendar({
-    input: '#calendar-default_3',
-});  
-
 //Get parameters from URL
 var getUrlParameter = function getUrlParameter(sParam) {
     var sPageURL = decodeURIComponent(window.location.search.substring(1)),
@@ -93,9 +83,9 @@ function createContentPage() {
                         '</div>' +
                       '</div>' +
                       '<div class="card-footer">' +
-                      '<a data-text="To get more posts download this app..." data-link="'+value.link+'" class="whatsapp w3_whatsapp_btn w3_whatsapp_btn_large">'+
+                      '<button data-text="To get more posts download this app..." data-link="'+value.link+'" class="whatsapp w3_whatsapp_btn w3_whatsapp_btn_large">'+
                        '<img src="img/share.png" height="34px">'+
-                      '</a>'+
+                      '</button>'+
                       '<a href="posts.html?postid='+value.id+'" class="button item-link external">View</a></div>' +
                     '<div class="item-inner"><div class="item-title"></div>');
                  //console.log(parseObject.profession);
@@ -143,3 +133,14 @@ function createContentPage() {
 
   });
 };
+
+var myVar;
+
+function myFunction() {
+    myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}

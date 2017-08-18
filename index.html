@@ -38,6 +38,27 @@
     alert('Spane Version 1.0.0');
   }
   $(document).ready(function() {
+    // Initialize your app
+var myApp = new Framework7();
+
+// Export selectors engine
+var $$ = Dom7;
+
+// Add view
+var mainView = myApp.addView('.view-main', {
+    // Because we use fixed-through navbar we can enable dynamic navbar
+    dynamicNavbar: true
+});
+
+var calendarDefault_1 = myApp.calendar({
+    input: '#calendar-default_1',
+});  
+var calendarDefault_2 = myApp.calendar({
+    input: '#calendar-default_2',
+});  
+var calendarDefault_3 = myApp.calendar({
+    input: '#calendar-default_3',
+}); 
 
   var isMobile = {
       Android: function() {
@@ -151,8 +172,8 @@
             <div class="tabs-swipeable-wrap">
               <div class="tabs">
                 <div id="tab1" class="page-content tab active">
-                <!--JS External Content Container-->
-                <h3>&nbsp;</h3>
+                  <!--JS External Content Container-->
+                  <h3>&nbsp;</h3>
                   <form data-search-list=".list-block-search" data-search-in=".item-title" class="searchbar searchbar-init">
                     <div class="searchbar-input">
                       <input type="search" placeholder="Search"><a href="#" class="searchbar-clear"></a>
@@ -230,10 +251,10 @@
                     <span class="tabbar-label">Help</span>
                 </a>
                 <a href="#" class="tab-link"  id="calendar-default_1" >
-                    <i class="f7-icons" id="calendar-default_2">
+                    <i class="f7-icons">
                        today
                     </i>
-                    <span class="tabbar-label" id="calendar-default_3">Calendar</span>
+                    <span class="tabbar-label">Calendar</span>
                 </a>
                 <a href="#" class="tab-link active" >
                     <i class="f7-icons">close_round</i>
