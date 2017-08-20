@@ -36,6 +36,8 @@
   <plugin name="phonegap-plugin-barcodescanner" source="npm"/>
   <plugin name="cordova-plugin-x-toast" />
 
+  <plugin name="InAppBrowser" value="CDVInAppBrowser" />
+
   <splash platform="android" qualifier="port-ldpi" src="res/screen/android/screen-ldpi-portrait.png" />
   <splash platform="android" qualifier="port-mdpi" src="res/screen/android/screen-mdpi-portrait.png" />
   <splash platform="android" qualifier="port-hdpi" src="res/screen/android/screen-hdpi-portrait.png" />
