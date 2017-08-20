@@ -159,88 +159,26 @@ var calendarDefault_3 = myApp.calendar({
                 <div class="right"><a href="#" class="open-panel link icon-only"><i class="icon icon-bars"></i></a></div>
               </div>
             </div>
-
-            <!--Sub navigation-->
-            <div class="toolbar tabbar">
-              <div class="toolbar-inner">
-                <a href="#tab1" class="active tab-link">Jobs</a>
-                <a href="#tab2" class="tab-link">Profile</a>
-              </div>
-            </div>
-
             <!--Main screen content-->
-            <div class="tabs-swipeable-wrap">
-              <div class="tabs">
-                <div id="tab1" class="page-content tab active">
-                  <!--JS External Content Container-->
-                  <h3>&nbsp;</h3>
-                  <form data-search-list=".list-block-search" data-search-in=".item-title" class="searchbar searchbar-init">
-                    <div class="searchbar-input">
-                      <input type="search" placeholder="Search"><a href="#" class="searchbar-clear"></a>
-                    </div><a href="#" class="searchbar-cancel">Cancel</a>
-                  </form>
-                  
-                  <!-- Search Bar overlay -->
-                  <div class="searchbar-overlay"></div>
-                  <!-- This block will be displayed if nothing found -->
-                  <div class="content-block searchbar-not-found">
-                    <div class="content-block-inner">Nothing found</div>
-                  </div>
-
-                  <div id="content-block-main">
-                    <!-- Content Here -->
-                  </div>
-                  <h2>&nbsp;</h2>
-                  <h3>&nbsp;</h3>
-                </div>
-                <div id="tab2" class="page-content tab">
-                  <div class="content-block">
-                  <h3>&nbsp;</h3>
-                    <div class="card">
-                      <div class="card-header"><h3><i class="f7-icons">document_text_fill</i> Personalize My App</h3></div>
-                      <div class="card-content">
-                        <div class="card-content-inner">
-                          <form id="userprofile-form" class="store-data list-block">
-                            <ul>
-                              <li>
-                                <div class="item-content">
-                                  <div class="item-media"><i class="icon material-icons">person_outline</i></div>
-                                  <div class="item-inner"> 
-                                    <div class="item-input">
-                                      <input type="text" placeholder="My name" name="name"/>
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                              <li>
-                                <div class="item-content">
-                                  <div class="item-media"><i class="icon material-icons">email</i></div>
-                                  <div class="item-inner"> 
-                                    <div class="item-input">
-                                      <input type="email" placeholder="My E-mail" name="email"/>
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                              <li>
-                                <div class="item-content">
-                                  <div class="item-media"><i class="icon material-icons">phone</i></div>
-                                  <div class="item-inner"> 
-                                    <div class="item-input">
-                                      <input type="number" placeholder="My Phone Number" name="phone"/>
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                            </ul>
-                          </form>
-                          <h3>&nbsp;</h3>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            <div class="page-content">
+              <!--JS External Content Container-->
+              <form data-search-list=".list-block-search" data-search-in=".item-title" class="searchbar searchbar-init">
+                <div class="searchbar-input">
+                  <input type="search" placeholder="Search"><a href="#" class="searchbar-clear"></a>
+                </div><a href="#" class="searchbar-cancel">Cancel</a>
+              </form>
+              
+              <!-- Search Bar overlay -->
+              <div class="searchbar-overlay"></div>
+              <!-- This block will be displayed if nothing found -->
+              <div class="content-block searchbar-not-found">
+                <div class="content-block-inner">Nothing found</div>
               </div>
+
+              <div id="content-block-main">
+                <!-- Content Here -->
+              </div>
+              <h1>&nbsp;</h1>
             </div>
             
             <!--Bottom toolbar menu-->

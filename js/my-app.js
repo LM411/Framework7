@@ -1,14 +1,10 @@
 // Initialize your app
-var myApp = new Framework7();
+var myApp = new Framework7({
+    swipePanel: 'left'
+});
 
 // Export selectors engine
 var $$ = Dom7;
-
-// Add view
-var mainView = myApp.addView('.view-main', {
-    // Because we use fixed-through navbar we can enable dynamic navbar
-    dynamicNavbar: true
-});
 
 //Get parameters from URL
 var getUrlParameter = function getUrlParameter(sParam) {
@@ -83,9 +79,9 @@ function createContentPage() {
                         '</div>' +
                       '</div>' +
                       '<div class="card-footer">' +
-                      '<button data-text="To get more posts download this app..." data-link="'+value.link+'" class="whatsapp w3_whatsapp_btn w3_whatsapp_btn_large">'+
+                      '<a data-text="To get more posts download this app..." data-link="'+value.link+'" class="whatsapp w3_whatsapp_btn w3_whatsapp_btn_large">'+
                        '<img src="img/share.png" height="34px">'+
-                      '</button>'+
+                      '</a>'+
                       '<a href="posts.html?postid='+value.id+'" class="button item-link external">View</a></div>' +
                     '<div class="item-inner"><div class="item-title"></div>');
                  //console.log(parseObject.profession);
