@@ -156,8 +156,14 @@ $('#search-input').keyup( function(){
    //show notification if results are empty
    if($('.card:contains("'+search_txt+'")').length === 0){
    		myApp.addNotification({
-   			title: 'Result',
-        	message: 'No Results Found for your Search'
+   			title: 'Results',
+   			closeIcon: true,
+   			closeOnClick: true,
+        	message: 'No Results Found for your Search',
+        	button: {
+        		text: 'Close',
+        		color: 'white'
+        	}
    		});
    }
 });
