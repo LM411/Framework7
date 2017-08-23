@@ -153,4 +153,11 @@ $('#search-input').keyup( function(){
     $('.card').hide();
    var search_txt = $('#search-input').val();
    $('.card:contains("'+search_txt+'")').show();
+   //show notification if results are empty
+   if($('.card:contains("'+search_txt+'")').length === 0){
+   		myApp.addNotification({
+   			title: 'Result',
+        	message: 'No Results Found for your Search'
+   		});
+   }
 });
