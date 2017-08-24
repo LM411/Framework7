@@ -21,79 +21,40 @@
   <script src="js/jquery.min.js"></script>
 </head>
 <script type="text/javascript">
-  function getData(){
-    var storedData = myApp.formGetData('userprofile-form');
-    if(storedData) {
-      var JsonString = JSON.stringify(storedData)
-      var parseObject = JSON.parse(JsonString);
-      alert(parseObject.profession);
-    }
-    else {
-      alert('There is no stored data for this form yet. Try to change any field')
-    }
+function getData(){
+  var storedData = myApp.formGetData('userprofile-form');
+  if(storedData) {
+    var JsonString = JSON.stringify(storedData)
+    var parseObject = JSON.parse(JsonString);
+    alert(parseObject.profession);
   }
-
-  //App version notification
-  function about(){
-    alert('Spane Version 1.0.0');
+  else {
+    alert('There is no stored data for this form yet. Try to change any field')
   }
-  $(document).ready(function() {
-    // Initialize your app
-var myApp = new Framework7();
+}
 
-// Export selectors engine
-var $$ = Dom7;
+//App version notification
+function about(){
+  alert('Spane Version 1.0.0');
+}
 
-// Add view
-var mainView = myApp.addView('.view-main', {
-    // Because we use fixed-through navbar we can enable dynamic navbar
-    dynamicNavbar: true
-});
+$(document).ready(function() {
+  // Initialize your app
+  var myApp = new Framework7();
 
-var calendarDefault_1 = myApp.calendar({
-    input: '#calendar-default_1',
-});  
-var calendarDefault_2 = myApp.calendar({
-    input: '#calendar-default_2',
-});  
-var calendarDefault_3 = myApp.calendar({
-    input: '#calendar-default_3',
-}); 
+  // Export selectors engine
+  var $$ = Dom7;
 
-  var isMobile = {
-      Android: function() {
-          return navigator.userAgent.match(/Android/i);
-      },
-      BlackBerry: function() {
-          return navigator.userAgent.match(/BlackBerry/i);
-      },
-      iOS: function() {
-          return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-      },
-      Opera: function() {
-          return navigator.userAgent.match(/Opera Mini/i);
-      },
-      Windows: function() {
-          return navigator.userAgent.match(/IEMobile/i);
-      },
-      any: function() {
-          return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
-      }
-  };
-   $(document).on("click", '.whatsapp', function() {
-          if( isMobile.any() ) {
-
-              var text = $(this).attr("data-text");
-              var url = $(this).attr("data-link");
-              var message = encodeURIComponent(text) + " - " + encodeURIComponent(url);
-              var whatsapp_url = "whatsapp://send?text=" + message;
-              window.location.href = whatsapp_url;
-          } else {
-              alert("Please share this article in mobile device");
-          }
-
-      });
+  // Add view
+  var mainView = myApp.addView('.view-main', {
+      // Because we use fixed-through navbar we can enable dynamic navbar
+      dynamicNavbar: true
   });
+
+  var calendarDefault_1 = myApp.calendar({
+      input: '#calendar-default_1',
+  });  
+});
 
 </script>
 
@@ -115,9 +76,9 @@ var calendarDefault_3 = myApp.calendar({
                   <li>
                     <a href="main-screen.html" class="item-link close-panel">
                       <div class="item-content">
-                        <div class="item-media"><i class="f7-icons">document_text</i></div>
                         <div class="item-inner">
-                          <div class="item-title">Documentation</div>
+                        <div class="item-media"><i class="f7-icons">document_text</i></div>
+                          <div class="item-title"><a href="#" data-popup=".popup-doc" class="open-popup">Documentation</a></div>
                         </div>
                       </div>
                     </a>
@@ -196,7 +157,7 @@ var calendarDefault_3 = myApp.calendar({
               <div class="speed-dial-buttons">
                 <a><i id="calendar-default_1" class="icon material-icons">today</i></a>
                 <a href="whatsapp://send?text=Hey if you want to keep up to date with the latest jobs openings follow this link : https://www.selibeng.com/" class="item-link external"><i class="icon material-icons">share</i></a>
-                <a href="#" title="Share App" onclick="about()"><i class="icon material-icons">help</i></a>
+                <a href="#" title="Share App" data-popup=".popup-doc" class="open-popup"><i class="icon material-icons">help</i></a>
               </div>
             </div>
 
@@ -206,6 +167,51 @@ var calendarDefault_3 = myApp.calendar({
 
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- About Popup -->
+    <div class="popup popup-doc">
+      <div class="content-block">
+        <h2>SpaneWork Documentation</h2>
+          <hr>
+          <p>
+            <b>Introduction</b><br/>
+            Project management’s primary challenge is to achieve all of project goals and objectives. The primary constraints of Projects App are scope, budget, quality, invoicing and time tracking. You can plan, collaborate with teams, cost effective, fix the rate for Project, can disclose your documents, and exchange views among the team.<br/><br/>
+
+            <b>Work log</b><br/>
+            Work log helps you to keep track of your time worked on projects. If an employee is involved in more than one project, they will want to track every little segment of time spent on tasks. For that you can set work timer and leave the clock running while you complete task, indicate with one or two keystrokes the onset or change of any given task. Work log has been an important function which supports you by giving an accurate duration of tasks that you performed.<br/><br/>
+
+            <b>Integration</b><br/>
+            Projects App doesn’t just support your business with Projects; it comes with many other apps to run your business. All apps are deeply integrated which communicate with one another. Any project task can be recorded and invoiced to a customer.<br/><br/>
+
+            <b>Features</b><br/>
+            Quick view of projects assigned to you, to your employee and to your team.
+            Create subprojects.
+            Observe associated apps in 360˚ view.
+            Create milestones.
+            Track hours for Project’s task and assign tasks.
+            Break task into subtasks
+            Access existing project’s milestone, people and tasks etc.
+            Export task into timesheet.
+            Generate reports to keep track of records
+            Create teams for better collaboration.
+            Rapid view of milestones and tasks with the help of Project Gantt Chart.
+            Record hours for completing work.
+            Set timer for ongoing work.
+            Invoice the customer based on task duration, milestone.
+            Fixes base rate for the projects.
+            Sync the Project’s task with Google.
+          </p>
+        <hr>
+        <center>
+        #SpaneWork Version 1.0.0
+        <p><a href="#" class="close-popup">
+        <img src="img/close.png" height="50px"><br>
+          Close
+          </a></p>
+        </center>
+       
       </div>
     </div>
     <script type="text/javascript" src="js/framework7.js"></script>
