@@ -76,8 +76,8 @@ $.ajax({
               '</div>' +
             '</div>' +
             '<div class="card-footer">' +
-            '<a href="'+value.link+'" data-text="To get more posts download this app..." class="whatsapp w3_whatsapp_btn w3_whatsapp_btn_large">'+
-             '<img src="img/share.png" height="34px">'+
+            '<a href="'+value.link+'" data-text="To get more posts download this app..." class="whatsapp w3_whatsapp_btn w3_whatsapp_btn_large">'
+              Share on Whatsapp
             '</a>'+
             '<a  href="posts.html?postid='+value.id+'" class="button item-link external">View</a></div>' +
           '<div class="item-inner"><div class="item-title"></div>');
