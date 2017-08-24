@@ -22,9 +22,6 @@ var getUrlParameter = function getUrlParameter(sParam) {
     }
 };
 
-function refresh(){
-  window.location.reload();
-}
 
 // Generate dynamic page
 var dynamicPageIndex = 0;
@@ -57,89 +54,78 @@ function createContentPage() {
 
 
 
- var rootURL = 'https://www.selibeng.com/wp-json/wp/v2';
+var rootURL = 'https://www.selibeng.com/wp-json/wp/v2';
 
- $.ajax({
-            // type: 'GET',
-            url: rootURL + '/posts?filter[posts_per_page]=400',
-            // dataType: 'json',
-            success: function(data){
-                
-                $.each(data, function(index, value) {
-                  $$('#content-block-main').append('<div class="card ks-facebook-card">' +
-                    '<div class="card-header">' +
-                        '<div class="ks-facebook-avatar"><img src="img/selibeng.png" width="34" height="34"/></div>' +
-                        '<div class="ks-facebook-name">Selibeng.com</div>' +
-                        '<div class="ks-facebook-date">'+value.date+'</div>' +
-                      '</div>' +
-                      '<div class="card-content">' + 
-                        '<div class="card-content-inner">' +
-                         '<p>'+value.title.rendered+'</p>' +
-                          //'<p class="more-content">Views: '+value.link+'</p>' +
-                        '</div>' +
-                      '</div>' +
-                      '<div class="card-footer">' +
-                      '<a data-text="To get more posts download this app..." data-link="'+value.link+'" class="whatsapp w3_whatsapp_btn w3_whatsapp_btn_large">'+
-                       '<img src="img/share.png" height="34px">'+
-                      '</a>'+
-                      '<a  href="posts.html?postid='+value.id+'" class="button item-link external">View</a></div>' +
-                    '<div class="item-inner"><div class="item-title"></div>');
-                 //console.log(parseObject.profession);
-                  //console.log(value.id);
-                });
-            },
-            error: function(error){
-                $$('.content-block-main').append('<div class="item-content">' + 
-                    '<div class="item-title"><div class="item-media"></div><center><img style="height:350px" src="img/error.png"/><br/><a onClick="refresh()">REFRESH PAGE</a></center></div>');
-                console.log(error);
-            }
+$.ajax({
+  // type: 'GET',
+  url: rootURL + '/posts?filter[posts_per_page]=400',
+  // dataType: 'json',
+  success: function(data){
+      
+      $.each(data, function(index, value) {
+        $$('#content-block-main').append('<div class="card ks-facebook-card">' +
+          '<div class="card-header">' +
+              '<div class="ks-facebook-avatar"><img src="img/selibeng.png" width="34" height="34"/></div>' +
+              '<div class="ks-facebook-name">Selibeng.com</div>' +
+              '<div class="ks-facebook-date">'+value.date+'</div>' +
+            '</div>' +
+            '<div class="card-content">' + 
+              '<div class="card-content-inner">' +
+               '<p>'+value.title.rendered+'</p>' +
+                //'<p class="more-content">Views: '+value.link+'</p>' +
+              '</div>' +
+            '</div>' +
+            '<div class="card-footer">' +
+            '<a data-text="To get more posts download this app..." onclick="window.open('+value.link+')" class="whatsapp w3_whatsapp_btn w3_whatsapp_btn_large">'+
+             '<img src="img/share.png" height="34px">'+
+            '</a>'+
+            '<a  href="posts.html?postid='+value.id+'" class="button item-link external">View</a></div>' +
+          '<div class="item-inner"><div class="item-title"></div>');
+       //console.log(parseObject.profession);
+        //console.log(value.id);
+      });
+  },
+  error: function(error){
+      $$('.content-block-main').append('<div class="item-content">' + 
+          '<div class="item-title"><div class="item-media"></div><center><img style="height:350px" src="img/error.png"/><br/><a onClick="refresh()">REFRESH PAGE</a></center></div>');
+      console.log(error);
+  }
 
- });
+});
 
  
   var postid = getUrlParameter('postid');
   if (postid != null){
-         $.ajax({
-            // type: 'GET',
-            url: rootURL + '/posts/'+postid,
-            // dataType: 'json',
-            success: function(data){
-              $$('.post-content-block').append('<div class="card ks-facebook-card">' +
-                '<div class="card-header">' +
-                    '<div class="ks-facebook-avatar"><img src="img/selibeng.png" width="34" height="34"/></div>' +
-                    '<div class="ks-facebook-name">Selibeng.com</div>' +
-                    '<div class="ks-facebook-date">'+data.date+'</div>' +
-                  '</div>' +
-                  '<div class="card-content">' + 
-                    '<div class="card-content-inner">' +
-                    '<p><h3>'+data.title.rendered+'</h3></p>' +
-                     '<p>'+data.content.rendered+'</p>' +
-                     '<p>More Content: <a href="'+data.link+'">'+data.link+'</a></p>' +
-                      // '<p class="color-gray">Views: '+value.link+'</p>' +
-                    '</div>' +
-                  '</div>' +
-                '<div class="item-inner"><div class="item-title"></div>');
-              //console.log(value.title);
-            },
-            error: function(error){
-                $$('.post-content-block').append('<div class="item-content">' + 
-                    '<div class="item-title"><div class="item-media"><i class="icon icon-f7"></i></div> there is a problem loading data, you might wanna check you internet connection and retry.</div>');
-                console.log(error);
-            }
-
+     $.ajax({
+      // type: 'GET',
+      url: rootURL + '/posts/'+postid,
+      // dataType: 'json',
+      success: function(data){
+        $$('.post-content-block').append('<div class="card ks-facebook-card">' +
+          '<div class="card-header">' +
+              '<div class="ks-facebook-avatar"><img src="img/selibeng.png" width="34" height="34"/></div>' +
+              '<div class="ks-facebook-name">Selibeng.com</div>' +
+              '<div class="ks-facebook-date">'+data.date+'</div>' +
+            '</div>' +
+            '<div class="card-content">' + 
+              '<div class="card-content-inner">' +
+              '<p><h3>'+data.title.rendered+'</h3></p>' +
+               '<p>'+data.content.rendered+'</p>' +
+               '<p>More Content: <a href="'+data.link+'">'+data.link+'</a></p>' +
+                // '<p class="color-gray">Views: '+value.link+'</p>' +
+              '</div>' +
+            '</div>' +
+          '<div class="item-inner"><div class="item-title"></div>');
+        //console.log(value.title);
+      },
+      error: function(error){
+          $$('.post-content-block').append('<div class="item-content">' + 
+              '<div class="item-title"><div class="item-media"><i class="icon icon-f7"></i></div> there is a problem loading data, you might wanna check you internet connection and retry.</div>');
+          console.log(error);
+      }
   });
 };
 
-var myVar;
-
-function myFunction() {
-    myVar = setTimeout(showPage, 3000);
-}
-
-function showPage() {
-  document.getElementById("loader").style.display = "none";
-  document.getElementById("myDiv").style.display = "block";
-}
 //Implement Search Filter 
 
 //ovewrite JQuery Case Sensitive
@@ -155,15 +141,15 @@ $('#search-input').keyup( function(){
    $('.card:contains("'+search_txt+'")').show();
    //show notification if results are empty
    if($('.card:contains("'+search_txt+'")').length === 0){
-   		myApp.addNotification({
-   			title: 'Results',
-   			closeIcon: true,
-   			closeOnClick: true,
-        	message: 'No Results Found for your Search',
-        	button: {
-        		text: 'Close',
-        		color: 'white'
-        	}
-   		});
+      myApp.addNotification({
+        title: 'Results',
+        closeIcon: true,
+        closeOnClick: true,
+          message: 'No Results Found for your Search',
+          button: {
+            text: 'Close',
+            color: 'white'
+          }
+      });
    }
 });

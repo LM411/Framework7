@@ -514,6 +514,9 @@ myApp.onPageInit('calendar', function (page) {
     var calendarDefault = myApp.calendar({
         input: '#ks-calendar-default',
     });
+    $$('.demo-alert').on('click', function () {
+        myApp.alert('Hello!');
+    });
     // With custom date format
     var calendarDateFormat = myApp.calendar({
         input: '#ks-calendar-date-format',
