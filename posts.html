@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="css/kitchen-sink.css">
   <link rel="icon" href="img/icon.png">
   <link rel="manifest" href="css/manifest.json">
+  <script src="js/jquery.min.js"></script>
 </head>
 <script type="text/javascript">
   function getData(){
@@ -31,7 +32,23 @@
       alert('There is no stored data for this form yet. Try to change any field');
     }
   }
+$(document).ready(function() {
+  // Initialize your app
+  var myApp = new Framework7();
 
+  // Export selectors engine
+  var $$ = Dom7;
+
+  // Add view
+  var mainView = myApp.addView('.view-main', {
+      // Because we use fixed-through navbar we can enable dynamic navbar
+      dynamicNavbar: true
+  });
+
+  var calendarDefault_1 = myApp.calendar({
+      input: '#calendar-default_1',
+  });  
+});
 </script>
 <style>
   /* Center the loader */
@@ -112,6 +129,16 @@
                       </div>
                     </a>
                   </li>
+                  <li>
+                    <a href="main-screen.html" class="item-link close-panel">
+                      <div class="item-content">
+                        <div class="item-media"><i class="f7-icons">phone</i></div>
+                        <div class="item-inner">
+                          <div class="item-title">Help Desk</div>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
                 </ul>
               </div>
               <div class="content-block">
@@ -127,7 +154,6 @@
       <div class="view view-main">
         <div class="pages navbar-fixed">
           <div data-page="index" class="page">
-
             <!--Main page navigation-->
             <div class="navbar">
               <div class="navbar-inner">
@@ -143,105 +169,76 @@
             <!--Sub navigation-->
             <!--Main screen content-->
             <div class="page-content">
-                  <div id="loader"></div>
-                  <div style="display:none;" id="myDiv" class="animate-bottom">
-                    <div class="post-content-block">
-                      
-                    </div>
-                    <a href="index.html" style="display:none;" id="myDiv" class="item-link close-panel external" class="button button-big button-fill">
-                      <span class="button button-big button-fill">
-                        Back to Jobs
-                      </span>
-                    </a>
-                  </div>
-                  <h3>&nbsp;</h3>
-                  <h3>&nbsp;</h3>
+              <div id="loader"></div>
+              <div style="display:none;" id="myDiv" class="animate-bottom">
+                <div class="post-content-block">
+                  
                 </div>
-                <div id="tab2" class="page-content tab">
-                  <div class="content-block" style="display:none;" id="myDiv">
-                  <h3>&nbsp;</h3>
-                    <div class="card">
-                      <div class="card-header"><h3><i class="f7-icons">document_text_fill</i> Personalize My App</h3></div>
-                      <div class="card-content">
-                        <div class="card-content-inner">
-                          <form id="userprofile-form" class="store-data list-block">
-                            <ul>
-                              <li>
-                                <div class="item-content">
-                                  <div class="item-media"><i class="icon material-icons">person_outline</i></div>
-                                  <div class="item-inner"> 
-                                    <div class="item-input">
-                                      <input type="text" placeholder="My name" name="name"/>
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                              <li>
-                                <div class="item-content">
-                                  <div class="item-media"><i class="icon material-icons">email</i></div>
-                                  <div class="item-inner"> 
-                                    <div class="item-input">
-                                      <input type="email" placeholder="My E-mail" name="email"/>
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                              <li>
-                                <div class="item-content">
-                                  <div class="item-media"><i class="icon material-icons">phone</i></div>
-                                  <div class="item-inner"> 
-                                    <div class="item-input">
-                                      <input type="number" placeholder="My Phone Number" name="phone"/>
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                            </ul>
-                          </form>
-                          <h3>&nbsp;</h3>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <a href="index.html" style="display:none;" id="myDiv" class="item-link close-panel external" class="button button-big button-fill">
+                  <span class="button button-big button-fill">
+                    Back to Jobs
+                  </span>
+                </a>
               </div>
+              <h3>&nbsp;</h3>
+              <h3>&nbsp;</h3>
             </div>
+          </div>
             
-            <!--Bottom toolbar menu
-            <div class="toolbar toolbar-bottom tabbar tabbar-labels">
-              <div class="toolbar-inner">
-                <a href="#" class="tab-link" onclick="about()">
-                    <i class="f7-icons">help</i>
-                    <span class="tabbar-label">Help</span>
-                </a>
-                <a href="#" class="tab-link"  id="calendar-default_1" >
-                    <i class="f7-icons">
-                       today
-                    </i>
-                    <span class="tabbar-label">Calendar</span>
-                </a>
-                <a href="#" class="tab-link active" >
-                    <i class="f7-icons">close_round</i>
-                    <span class="tabbar-label">Close</span>
-                </a>
-              </div>-->
+          <!--Floating button SpeedDial-->
+          <div class="speed-dial" id="#calendar-default_1">
+            <a href="#" class="floating-button"><i class="icon icon-plus"></i><i class="icon icon-close"></i></a>
+            <div class="speed-dial-buttons">
+              <a href="#"><i id="calendar-default_1" class="icon material-icons">today</i></a>
+              <a href="#" title="Share App" data-popup=".popup-doc" class="open-popup"><i class="icon material-icons">help</i></a>
             </div>
-            <!--Floating button SpeedDial-->
-            <div class="speed-dial">
-              <a href="#" class="floating-button"><i class="icon icon-plus"></i><i class="icon icon-close"></i></a>
-              <div class="speed-dial-buttons">
-                <a><i id="calendar-default_1" class="icon material-icons">today</i></a>
-                <a href="whatsapp://send?text=Hey if you want to keep up to date with the latest jobs openings follow this link : https://www.selibeng.com/" class="item-link external"><i class="icon material-icons">share</i></a>
-                <a href="#" title="Share App" onclick="about()"><i class="icon material-icons">help</i></a>
-              </div>
-            </div>
-
-            </div>
-            </div>
-
-
           </div>
         </div>
+      </div>
+    </div>
+
+        <!-- About Popup -->
+    <div class="popup popup-doc">
+      <div class="content-block">
+        <h2>SpaneWork Documentation</h2>
+          <hr>
+          <p>
+            <b>Introduction</b><br/>
+            Project management’s primary challenge is to achieve all of project goals and objectives. The primary constraints of Projects App are scope, budget, quality, invoicing and time tracking. You can plan, collaborate with teams, cost effective, fix the rate for Project, can disclose your documents, and exchange views among the team.<br/><br/>
+
+            <b>Work log</b><br/>
+            Work log helps you to keep track of your time worked on projects. If an employee is involved in more than one project, they will want to track every little segment of time spent on tasks. For that you can set work timer and leave the clock running while you complete task, indicate with one or two keystrokes the onset or change of any given task. Work log has been an important function which supports you by giving an accurate duration of tasks that you performed.<br/><br/>
+
+            <b>Integration</b><br/>
+            Projects App doesn’t just support your business with Projects; it comes with many other apps to run your business. All apps are deeply integrated which communicate with one another. Any project task can be recorded and invoiced to a customer.<br/><br/>
+
+            <b>Features</b><br/>
+            Quick view of projects assigned to you, to your employee and to your team.
+            Create subprojects.
+            Observe associated apps in 360˚ view.
+            Create milestones.
+            Track hours for Project’s task and assign tasks.
+            Break task into subtasks
+            Access existing project’s milestone, people and tasks etc.
+            Export task into timesheet.
+            Generate reports to keep track of records
+            Create teams for better collaboration.
+            Rapid view of milestones and tasks with the help of Project Gantt Chart.
+            Record hours for completing work.
+            Set timer for ongoing work.
+            Invoice the customer based on task duration, milestone.
+            Fixes base rate for the projects.
+            Sync the Project’s task with Google.
+          </p>
+        <hr>
+        <center>
+        #SpaneWork Version 1.0.0
+        <p><a href="#" class="close-popup">
+        <img src="img/close.png" height="50px"><br>
+          Close
+          </a></p>
+        </center>
+       
       </div>
     </div>
     <script>

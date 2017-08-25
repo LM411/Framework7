@@ -33,6 +33,22 @@ function getData(){
   }
 }
 
+function checkConnection() {
+  var networkState = navigator.connection.type;
+
+  var states = {};
+  states[Connection.UNKNOWN]  = 'Unknown connection';
+  states[Connection.ETHERNET] = 'Ethernet connection';
+  states[Connection.WIFI]     = 'WiFi connection';
+  states[Connection.CELL_2G]  = 'Cell 2G connection';
+  states[Connection.CELL_3G]  = 'Cell 3G connection';
+  states[Connection.CELL_4G]  = 'Cell 4G connection';
+  states[Connection.CELL]     = 'Cell generic connection';
+  states[Connection.NONE]     = 'No network connection';
+
+  alert('Connection type: ' + states[networkState]);
+}
+
 //App version notification
 function about(){
   alert('Spane Version 1.0.0');
@@ -78,7 +94,7 @@ $(document).ready(function() {
                       <div class="item-content">
                         <div class="item-inner">
                         <div class="item-media"><i class="f7-icons">document_text</i></div>
-                          <div class="item-title"><a href="#" data-popup=".popup-doc" class="open-popup">Documentation</a></div>
+                          <div class="item-title"></div>
                         </div>
                       </div>
                     </a>
@@ -154,9 +170,9 @@ $(document).ready(function() {
             <div class="speed-dial">
               <a href="#" class="floating-button"><i class="icon icon-plus"></i><i class="icon icon-close"></i></a>
               <div class="speed-dial-buttons">
-                <a id="calendar-default_1"><i  class="icon material-icons">today</i></a>
+               <a href="#"><i id="calendar-default_1" class="icon material-icons">today</i></a>
                 <a href="whatsapp://send?text=Hey if you want to keep up to date with the latest jobs openings follow this link : https://www.selibeng.com/" class="item-link external"><i class="icon material-icons">share</i></a>
-                <a href="#" title="Share App" data-popup=".popup-doc" class="open-popup"><i class="icon material-icons">help</i></a>
+                <a href="#" title="Share App" onClick="checkConnection()" ><i class="icon material-icons">help</i></a> <!--data-popup=".popup-doc" class="open-popup"-->
               </div>
             </div>
 

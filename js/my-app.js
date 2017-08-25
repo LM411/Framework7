@@ -76,7 +76,7 @@ $.ajax({
               '</div>' +
             '</div>' +
             '<div class="card-footer">' +
-            '<a  href="whatsapp://send?text='+value.link+'" class="button item-link external">Share on Whatsapp</a>'+
+            '<a  href="whatsapp://send?text='+value.link+'" class="button item-link external"><img src="img/whatsapp_share.png" height="20px" style="margin-top:8px;"></a>'+
             '<a  href="posts.html?postid='+value.id+'" class="button item-link external">View</a></div>' +
           '<div class="item-inner"><div class="item-title"></div>');
        //console.log(parseObject.profession);
@@ -135,30 +135,3 @@ function showPage() {
   document.getElementById("myDiv").style.display = "block";
 }
 
-//Implement Search Filter 
-
-//ovewrite JQuery Case Sensitive
-jQuery.expr[':'].contains = function(a, i, m) {
-  return jQuery(a).text().toUpperCase()
-      .indexOf(m[3].toUpperCase()) >= 0;
-};
-//Then Search
-var search_txt = $('#search-input').val();
-$('#search-input').keyup( function(){
-    $('.card').hide();
-   var search_txt = $('#search-input').val();
-   $('.card:contains("'+search_txt+'")').show();
-   //show notification if results are empty
-   if($('.card:contains("'+search_txt+'")').length === 0){
-      myApp.addNotification({
-        title: 'Results',
-        closeIcon: true,
-        closeOnClick: true,
-          message: 'No Results Found for your Search',
-          button: {
-            text: 'Close',
-            color: 'white'
-          }
-      });
-   }
-});
