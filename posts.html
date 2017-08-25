@@ -50,59 +50,7 @@ $(document).ready(function() {
   });  
 });
 </script>
-<style>
-  /* Center the loader */
-  #loader {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    z-index: 1;
-    width: 150px;
-    height: 150px;
-    margin: -75px 0 0 -75px;
-    border: 16px solid #f3f3f3;
-    border-radius: 50%;
-    border-top: 16px solid #009688;
-    border-bottom: 16px solid #009688;
-    width: 120px;
-    height: 120px;
-    -webkit-animation: spin 2s linear infinite;
-    animation: spin 2s linear infinite;
-  }
 
-  @-webkit-keyframes spin {
-    0% { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
-  }
-
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-
-  /* Add animation to "page content" */
-  .animate-bottom {
-    position: relative;
-    -webkit-animation-name: animatebottom;
-    -webkit-animation-duration: 1s;
-    animation-name: animatebottom;
-    animation-duration: 1s
-  }
-
-  @-webkit-keyframes animatebottom {
-    from { bottom:-100px; opacity:0 } 
-    to { bottom:0px; opacity:1 }
-  }
-
-  @keyframes animatebottom { 
-    from{ bottom:-100px; opacity:0 } 
-    to{ bottom:0; opacity:1 }
-  }
-
-  #myDiv {
-    display: none;
-  }
-</style>
 <body class="theme-teal" onload="myFunction()">
 
     <div class="statusbar-overlay"></div>
@@ -116,39 +64,17 @@ $(document).ready(function() {
               </div>
             </div>
             <div class="page-content">
-              <div class="content-block-title"> Help Menu</div>
-              <div class="list-block">
-                <ul>
-                  <li>
-                    <a href="main-screen.html" class="item-link close-panel">
-                      <div class="item-content">
-                        <div class="item-media"><i class="f7-icons">document_text</i></div>
-                        <div class="item-inner">
-                          <div class="item-title">Documentation</div>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="main-screen.html" class="item-link close-panel">
-                      <div class="item-content">
-                        <div class="item-media"><i class="f7-icons">phone</i></div>
-                        <div class="item-inner">
-                          <div class="item-title">Help Desk</div>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-              </div>
+              <div class="content-block-title"><center>#RespectYourHustle</center></div>
+                <img src="img/icon_.png">
               <div class="content-block">
-                <p>2017 &copy; Spane | Selibeng | LesCas</p>
+                <center>Selibeng | Spane | LesCas</center>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
 
     <div class="views">
       <div class="view view-main">
@@ -196,39 +122,35 @@ $(document).ready(function() {
         </div>
       </div>
     </div>
-
-        <!-- About Popup -->
+    <!-- About Popup -->
     <div class="popup popup-doc">
       <div class="content-block">
-        <h2>SpaneWork Documentation</h2>
+        <h2>#SpaneWork Documentation</h2>
           <hr>
           <p>
             <b>Introduction</b><br/>
-            Project management’s primary challenge is to achieve all of project goals and objectives. The primary constraints of Projects App are scope, budget, quality, invoicing and time tracking. You can plan, collaborate with teams, cost effective, fix the rate for Project, can disclose your documents, and exchange views among the team.<br/><br/>
-
-            <b>Work log</b><br/>
-            Work log helps you to keep track of your time worked on projects. If an employee is involved in more than one project, they will want to track every little segment of time spent on tasks. For that you can set work timer and leave the clock running while you complete task, indicate with one or two keystrokes the onset or change of any given task. Work log has been an important function which supports you by giving an accurate duration of tasks that you performed.<br/><br/>
-
-            <b>Integration</b><br/>
-            Projects App doesn’t just support your business with Projects; it comes with many other apps to run your business. All apps are deeply integrated which communicate with one another. Any project task can be recorded and invoiced to a customer.<br/><br/>
-
+            #SpaneWork is a job seeking platform keeping you up-to-date with the latest in local and international jobs. It is an android
+            based platform running on <b>Android 2.3 Gingerbread</b> & above but for better performance <b>Android 4.1 KitKat</b> and above platforms
+            are advised.<br/><br/>
+            
             <b>Features</b><br/>
-            Quick view of projects assigned to you, to your employee and to your team.
-            Create subprojects.
-            Observe associated apps in 360˚ view.
-            Create milestones.
-            Track hours for Project’s task and assign tasks.
-            Break task into subtasks
-            Access existing project’s milestone, people and tasks etc.
-            Export task into timesheet.
-            Generate reports to keep track of records
-            Create teams for better collaboration.
-            Rapid view of milestones and tasks with the help of Project Gantt Chart.
-            Record hours for completing work.
-            Set timer for ongoing work.
-            Invoice the customer based on task duration, milestone.
-            Fixes base rate for the projects.
-            Sync the Project’s task with Google.
+            1. View posts<br/>
+            2. View posts details<br/>
+            3. Share posts<br/>
+            4. Share app link<br/>
+            5. View calendar<br/>
+            6. App documentation<br/><br/>
+            
+           
+            <b>Terms of Use</b><br/>
+            Please note this is a post viewing platform and not a job application platform. No curriculum vitae will be received by our group
+            and no form of meetings are coordinated or arranged by our group. It is our users responsibility to validate any and all job
+            posts on the platform. Should any suspision arise on a particular job post please contact <b>helpdesk@nsgplesotho.com</b><br/><br/>
+
+            <b>License</b><br/>
+            #SpaneWork operates inline with the context applicable international laws governing commercial & opensource platforms.<br/><br/>
+
+            
           </p>
         <hr>
         <center>
@@ -238,7 +160,6 @@ $(document).ready(function() {
           Close
           </a></p>
         </center>
-       
       </div>
     </div>
     <script>
@@ -256,6 +177,7 @@ $(document).ready(function() {
     <script type="text/javascript" src="js/framework7.js"></script>
     <script type="text/javascript" src="js/kitchen-sink.js"></script>
     <script type="text/javascript" src="js/jquery.js"></script>
+    <link rel="stylesheet" href="css/my-app.css">
     <!-- Path to your app js-->
     <script type="text/javascript" src="js/my-app.js"></script>
   </body>

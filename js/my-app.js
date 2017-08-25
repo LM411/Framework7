@@ -124,14 +124,30 @@ $.ajax({
   });
 };
 
-var myVar;
+//Implement Search Filter 
 
-function myFunction() {
-    myVar = setTimeout(showPage, 3000);
-}
-
-function showPage() {
-  document.getElementById("loader").style.display = "none";
-  document.getElementById("myDiv").style.display = "block";
-}
-
+//ovewrite JQuery Case Sensitive
+jQuery.expr[':'].contains = function(a, i, m) {
+  return jQuery(a).text().toUpperCase()
+      .indexOf(m[3].toUpperCase()) >= 0;
+};
+//Then Search
+var search_txt = $('#search-input').val();
+$('#search-input').keyup( function(){
+    $('.card').hide();
+   var search_txt = $('#search-input').val();
+   $('.card:contains("'+search_txt+'")').show();
+   //show notification if results are empty
+   if($('.card:contains("'+search_txt+'")').length === 0){
+      myApp.addNotification({
+        title: 'Results - Tap to Remove',
+        closeIcon: true,
+        closeOnClick: true,
+          message: 'No Results Found for your Search',
+          button: {
+            text: 'Close',
+            color: 'white'
+          }
+      });
+   }
+});
