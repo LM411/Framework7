@@ -18,7 +18,6 @@
       Nvulane Nhlapo
       Lehlohonolo Makoti
   </author>
-  <access origin="whatsapp:*" launch-external="yes" />
   <plugin name="cordova-plugin-splashscreen" source="npm" />
   <preference name="orientation" value="portrait" />
   <preference name="KeepRunning" value="false"/>
