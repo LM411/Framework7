@@ -33,26 +33,23 @@ function getData(){
   }
 }
 
+
 function checkConnection() {
-  var networkState = navigator.connection.type;
+    var networkState = navigator.connection.type;
 
-  var states = {};
-  states[Connection.UNKNOWN]  = 'Unknown connection';
-  states[Connection.ETHERNET] = 'Ethernet connection';
-  states[Connection.WIFI]     = 'WiFi connection';
-  states[Connection.CELL_2G]  = 'Cell 2G connection';
-  states[Connection.CELL_3G]  = 'Cell 3G connection';
-  states[Connection.CELL_4G]  = 'Cell 4G connection';
-  states[Connection.CELL]     = 'Cell generic connection';
-  states[Connection.NONE]     = 'No network connection';
+    var states = {};
+    states[Connection.UNKNOWN]  = 'Unknown connection';
+    states[Connection.ETHERNET] = 'Ethernet connection';
+    states[Connection.WIFI]     = 'WiFi connection';
+    states[Connection.CELL_2G]  = 'Cell 2G connection';
+    states[Connection.CELL_3G]  = 'Cell 3G connection';
+    states[Connection.CELL_4G]  = 'Cell 4G connection';
+    states[Connection.CELL]     = 'Cell generic connection';
+    states[Connection.NONE]     = 'No network connection';
 
-  alert('Connection type: ' + states[networkState]);
+    alert('Connection type: ' + states[networkState]);
 }
 
-//App version notification
-function about(){
-  alert('Spane Version 1.0.0');
-}
 
 $(document).ready(function() {
   // Initialize your app
@@ -70,11 +67,14 @@ $(document).ready(function() {
   var calendarDefault_1 = myApp.calendar({
       input: '#calendar-default_1',
   });  
+
+  document.getElementById("networkInfo").addEventListener("click", checkConnection);
+
 });
 
 </script>
 
-<body class="theme-teal">
+<body class="theme-teal" onload="onLoad()">
     <div class="statusbar-overlay"></div>
     <div class="panel-overlay"></div>
     <div class="panel panel-left panel-cover">
@@ -112,6 +112,7 @@ $(document).ready(function() {
                 <div class="right"><a href="#" class="open-panel link icon-only"><i class="icon icon-bars"></i></a></div>
               </div>
             </div>
+
             <!--Main screen content-->
             <div class="page-content">
               <!--JS External Content Container-->
@@ -120,7 +121,7 @@ $(document).ready(function() {
                   <input type="search" placeholder="Search" id="search-input"><a href="#" class="searchbar-clear"></a>
                 </div><a href="#" class="searchbar-cancel">Cancel</a>
               </form>
-              
+              <button id = "networkInfo">INFO</button>
               <!-- Search Bar overlay -->
               <div class="searchbar-overlay"></div>
               <!-- This block will be displayed if nothing found -->
