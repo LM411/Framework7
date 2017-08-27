@@ -5,8 +5,8 @@
     versionCode = "1" 
     version     = "1.0.0" >
 
-  <!-- versionCode is Android only -->
-  <!-- version is in major.minor.patch format --> 
+  versionCode is Android only
+  version is in major.minor.patch format 
   <name>Spane</name>
 
   <description>
@@ -32,8 +32,12 @@
   <plugin spec="https://github.com/floatinghotpot/cordova-admob-pro" source="git" />
 
   <plugin name="cordova-plugin-inappbrowser"   source="npm" spec="1.0.1" />
-  <plugin name="cordova-plugin-network-information" source="npm" spec="1.0.1" />
-  
+  <feature name="InAppBrowser">
+    <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
+</feature>
+
+  <!-- <plugin name="cordova-plugin-network-information" source="npm" spec="1.0.1" /> -->
+
   <plugin name="cordova-universal-clipboard" source="npm"/>
   <plugin name="phonegap-plugin-barcodescanner" source="npm"/>
   <plugin name="cordova-plugin-x-toast" />
