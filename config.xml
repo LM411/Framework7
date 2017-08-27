@@ -33,7 +33,6 @@
 
   <plugin name="cordova-plugin-inappbrowser"   source="npm" spec="1.0.1" />
   <plugin name="cordova-plugin-network-information" source="npm" spec="1.0.1" />
-  <plugin name="org.apache.cordova.network-information" spec="0.2.12" source="pgb" />
   
   <plugin name="cordova-universal-clipboard" source="npm"/>
   <plugin name="phonegap-plugin-barcodescanner" source="npm"/>
