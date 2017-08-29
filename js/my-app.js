@@ -110,6 +110,7 @@ $.ajax({
               '<p><h3>'+data.title.rendered+'</h3></p>' +
                '<p>'+data.content.rendered+'</p>' +
                '<p>More Content: <a href="'+data.link+'">'+data.link+'</a></p>' +
+               '<a  href="whatsapp://send?text='+data.link+'" style="text-align:center;" class="button item-link external"><img src="img/whatsapp_share.png" height="20px" style="margin-top:8px;"></a>'+
                 // '<p class="color-gray">Views: '+value.link+'</p>' +
               '</div>' +
             '</div>' +

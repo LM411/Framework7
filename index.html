@@ -34,7 +34,7 @@ function getData(){
 }
 
 function test(){
-  window.open('http://apache.org', '_blank', 'location=yes');
+  window.open('http://apache.org', '_system','toolbar=no,location=no');
 }
 
 $(document).ready(function() {
@@ -107,7 +107,6 @@ $(document).ready(function() {
                 </div><a href="#" class="searchbar-cancel">Cancel</a>
               </form>
               
-              <a href="#" onclick="test()">test</a>
               <!-- Search Bar overlay -->
               <div class="searchbar-overlay"></div>
               <!-- This block will be displayed if nothing found -->
