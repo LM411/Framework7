@@ -52,46 +52,117 @@ function createContentPage() {
   return;
 }
 
+//Maximize posts
+var allPosts = [];
 
+function retrievePosts(opt) {
+  if (typeof opt === 'undefined')
+    opt = {};
+//set our options here
+  var options = $.extend({
+    per_page: 100,
+    page: 1
+  }, opt);
+  var url = 'https://www.selibeng.com/wp-json/wp/v2/posts';
+  var uri = url + '?per_page=' + options.per_page + '&page=' + options.page;
 
-var rootURL = 'https://www.selibeng.com/wp-json/wp/v2';
+  $.getJSON(uri, function(data, status, jqXHR) {
+    var totalpages = jqXHR.getResponseHeader('x-wp-totalpages');
 
-$.ajax({
-  // type: 'GET',
-  url: rootURL + '/posts?filter[posts_per_page]=400',
-  // dataType: 'json',
-  success: function(data){
-      
-      $.each(data, function(index, value) {
-        $$('#content-block-main').append('<div class="card ks-facebook-card">' +
-          '<div class="card-header">' +
-              '<div class="ks-facebook-avatar"><img src="img/selibeng.png" width="34" height="34"/></div>' +
-              '<div class="ks-facebook-name">Selibeng.com</div>' +
-              '<div class="ks-facebook-date">'+value.date+'</div>' +
-            '</div>' +
-            '<div class="card-content">' + 
-              '<div class="card-content-inner">' +
-               '<p>'+value.title.rendered+'</p>' +
-                //'<p class="more-content">Views: '+value.link+'</p>' +
-              '</div>' +
-            '</div>' +
-            '<div class="card-footer">' +
-            '<a  href="whatsapp://send?text='+value.link+'" class="button item-link external"><img src="img/whatsapp_share.png" height="20px" style="margin-top:8px;"></a>'+
-            '<a  href="posts.html?postid='+value.id+'" class="button item-link external">View</a></div>' +
-          '<div class="item-inner"><div class="item-title"></div>');
-       //console.log(parseObject.profession);
-        //console.log(value.id);
+    allPosts = allPosts.concat( data );
+
+ 	
+    // Attemp request if we are not done, according to our parameters
+    if (options.page < totalpages) {
+      // request again, but for the next page
+      retrievePosts({
+        per_page: options.per_page,
+        page: options.page + 1
       });
-  },
-  error: function(error){
-      $$('.content-block-main').append('<div class="item-content">' + 
-          '<div class="item-title"><div class="item-media"></div><center><img style="height:350px" src="img/error.png"/><br/><a onClick="refresh()">REFRESH PAGE</a></center></div>');
-      console.log(error);
-  }
+    } else {
+    		//Nothing
+    }
+  });
+$.ajax({
+            // type: 'GET',
+            url: uri,
+            // dataType: 'json',
+            success: function(data){
+                
+                $.each(data, function(index, value) {
+                  $$('.content-block-main').append('<div class="card ks-facebook-card">' +
+                  	'<div class="card-header">' +
+                        '<div class="ks-facebook-avatar"><img src="img/selibeng.png" width="34" height="34"/></div>' +
+                        '<div class="ks-facebook-name">Selibeng.com</div>' +
+                        '<div class="ks-facebook-date">'+value.date+'</div>' +
+                      '</div>' +
+                      '<div class="card-content">' + 
+                        '<div class="card-content-inner">' +
+                         '<p>'+value.title.rendered+'</p>' +
+                          //'<p class="more-content">Views: '+value.link+'</p>' +
+                        '</div>' +
+                      '</div>' +
+                      '<div class="card-footer">' +
+                      '<a href="www.selibeng.com/mis-specialist-at-psi/" class="link">Mark</a>' +
+                      '<a href="www.selibeng.com/mis-specialist-at-psi/" class="link">Remove</a>' +
+                      '<a href="posts.html?postid='+value.id+'" class="item-link external">View</a></div>' +
+                    '<div class="item-inner"><div class="item-title"></div>');
+                  //console.log(value.title.rendered);
+                  //console.log(value.id);
+                });
+            },
+            error: function(error){
+                $$('.content-block-main').append('<div class="item-content">' + 
+                    '<div class="item-title"><div class="item-media"><i class="icon icon-f7"></i></div> there is a problem loading data, you might wanna check you internet connection and retry.</div>');
+                console.log(error);
+            }
 
-});
+ });
 
- 
+};
+
+retrievePosts();
+
+
+// var rootURL = 'https://www.selibeng.com/wp-json/wp/v2';
+
+ // $.ajax({
+ //            // type: 'GET',
+ //            url: rootURL + '/posts?per_page=50',
+ //            // dataType: 'json',
+ //            success: function(data){
+                
+ //                $.each(data, function(index, value) {
+ //                  $$('.content-block-main').append('<div class="card ks-facebook-card">' +
+ //                  	'<div class="card-header">' +
+ //                        '<div class="ks-facebook-avatar"><img src="img/selibeng.png" width="34" height="34"/></div>' +
+ //                        '<div class="ks-facebook-name">Selibeng.com</div>' +
+ //                        '<div class="ks-facebook-date">'+value.date+'</div>' +
+ //                      '</div>' +
+ //                      '<div class="card-content">' + 
+ //                        '<div class="card-content-inner">' +
+ //                         '<p>'+value.title.rendered+'</p>' +
+ //                          //'<p class="more-content">Views: '+value.link+'</p>' +
+ //                        '</div>' +
+ //                      '</div>' +
+ //                      '<div class="card-footer">' +
+ //                      '<a href="www.selibeng.com/mis-specialist-at-psi/" class="link">Mark</a>' +
+ //                      '<a href="www.selibeng.com/mis-specialist-at-psi/" class="link">Remove</a>' +
+ //                      '<a href="posts.html?postid='+value.id+'" class="item-link external">View</a></div>' +
+ //                    '<div class="item-inner"><div class="item-title"></div>');
+ //                  //console.log(value.title.rendered);
+ //                  //console.log(value.id);
+ //                });
+ //            },
+ //            error: function(error){
+ //                $$('.content-block-main').append('<div class="item-content">' + 
+ //                    '<div class="item-title"><div class="item-media"><i class="icon icon-f7"></i></div> there is a problem loading data, you might wanna check you internet connection and retry.</div>');
+ //                console.log(error);
+ //            }
+
+ // });
+
+ var rootURL = 'https://www.selibeng.com/wp-json/wp/v2';
   var postid = getUrlParameter('postid');
   if (postid != null){
      $.ajax({
