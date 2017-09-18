@@ -1,10 +1,34 @@
 // Initialize your app
-var myApp = new Framework7({
-    swipePanel: 'left'
-});
+  var myApp = new Framework7();
 
-// Export selectors engine
-var $$ = Dom7;
+  // Export selectors engine
+  var $$ = Dom7;
+
+  // Add view
+  var mainView = myApp.addView('.view-main', {
+      // Because we use fixed-through navbar we can enable dynamic navbar
+      dynamicNavbar: true
+  });
+
+  var calendarDefault_1 = myApp.calendar({
+      input: '#calendar-default_1',
+  });  
+
+  function getData(){
+  var storedData = myApp.formGetData('userprofile-form');
+  if(storedData) {
+    var JsonString = JSON.stringify(storedData)
+    var parseObject = JSON.parse(JsonString);
+    alert(parseObject.profession);
+  }
+  else {
+    alert('There is no stored data for this form yet. Try to change any field')
+  }
+}
+
+function test(){
+  window.open('http://apache.org', '_system','toolbar=no,location=no');
+}
 
 //Get parameters from URL
 var getUrlParameter = function getUrlParameter(sParam) {
