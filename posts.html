@@ -21,38 +21,11 @@
   <script src="js/jquery.min.js"></script>
 </head>
 <script type="text/javascript">
-  function getData(){
-    var storedData = myApp.formGetData('userprofile-form');
-    if(storedData) {
-      var JsonString = JSON.stringify(storedData)
-      var parseObject = JSON.parse(JsonString);
-      alert(parseObject.profession);
-    }
-    else {
-      alert('There is no stored data for this form yet. Try to change any field');
-    }
-  }
 $(document).ready(function() {
   // Initialize your app
   var myApp = new Framework7();
-
-  // Export selectors engine
-  var $$ = Dom7;
-
-  // Add view
-  var mainView = myApp.addView('.view-main', {
-      // Because we use fixed-through navbar we can enable dynamic navbar
-      dynamicNavbar: true
-  });
-
-  var calendarDefault_1 = myApp.calendar({
-      input: '#calendar-default_1',
-  });  
-
 });
-
 </script>
-
 <body class="theme-teal" onload="myFunction()">
 
     <div class="statusbar-overlay"></div>
@@ -111,10 +84,10 @@ $(document).ready(function() {
           </div>
             
           <!--Floating button SpeedDial-->
-          <div class="speed-dial" id="#calendar-default_1">
+          <div class="speed-dial" id="#calendar-default">
             <a href="#" class="floating-button"><i class="icon icon-plus"></i><i class="icon icon-close"></i></a>
             <div class="speed-dial-buttons">
-              <a href="#"><i id="calendar-default_1" class="icon material-icons">today</i></a>
+              <a href="#"><i id="calendar-default" class="icon material-icons">today</i></a>
               <a href="#" title="Share App" data-popup=".popup-doc" class="open-popup"><i class="icon material-icons">help</i></a>
             </div>
           </div>

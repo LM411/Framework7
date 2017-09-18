@@ -20,6 +20,13 @@
   <link rel="manifest" href="css/manifest.json">
   <script src="js/jquery.min.js"></script>
 </head>
+<script type="text/javascript">
+$(document).ready(function() {
+  // Initialize your app
+  var myApp = new Framework7();
+});
+</script>
+
 <body class="theme-teal">
     <div class="statusbar-overlay"></div>
     <div class="panel-overlay"></div>
@@ -51,7 +58,7 @@
             <div class="navbar">
               <div class="navbar-inner">
                 <div class="left">
-                  <a href="#" class="link icon-only">
+                  <a href="index.html" class="link icon-only">
                       <i class=""><img src="img/icon.png" style="height:40px;margin-top: 20px"></i>
                   </a>
                 </div>
@@ -102,11 +109,12 @@
             </div>
             <!--Floating button SpeedDial-->
             <div class="speed-dial">
-              <a href="#" class="floating-button"><i class="icon icon-plus"></i><i class="icon icon-close"></i></a>
+              <a href="#" class="floating-button""><i class="icon icon-plus"></i><i class="icon icon-close"></i></a>
               <div class="speed-dial-buttons">
-               <a href="#"><i id="calendar-default_1" class="icon material-icons">today</i></a>
-                <a href="whatsapp://send?text=Hey if you want to keep up to date with the latest jobs openings follow this link : https://www.selibeng.com/" class="item-link external"><i class="icon material-icons">share</i></a>
-                <a href="#" title="Share App" data-popup=".popup-doc" class="open-popup"><i class="icon material-icons">help</i></a>
+               <p class="buttons-row"><button class="button button-raised button-fill color-white"" style="color:gray;margin-left: -70px;"><b>Date</b></button><a href="#" style="margin-right: 10px;margin-left: 10px;"><i id="calendar-default" class="icon material-icons">today</i></a></p>
+
+                 <p class="buttons-row"><button class="button button-raised button-fill color-white"" style="color:gray;margin-left: -70px;"><b>Share</b></button><a href="whatsapp://send?text=Hey if you want to keep up to date with the latest jobs openings follow this link : https://www.selibeng.com/" style="margin-right: 10px;margin-left: 10px;" class="item-link external"><i class="icon material-icons">share</i></a></p>
+                 <p class="buttons-row"><button class="button button-raised button-fill color-white"" style="color:gray;margin-left: -70px;"><b>Help</b></button><a href="#" style="margin-right: 10px;margin-left: 10px;" data-popup=".popup-doc" class="open-popup"><i class="icon material-icons">help</i></a></p>
               </div>
             </div>
 
@@ -156,7 +164,7 @@
         <img src="img/close.png" height="50px"><br>
           Close
           </a></p>
-        </center>
+        </center> 
       </div>
     </div>
     

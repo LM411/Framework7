@@ -10,8 +10,8 @@
       dynamicNavbar: true
   });
 
-  var calendarDefault_1 = myApp.calendar({
-      input: '#calendar-default_1',
+  var calendarDefault = myApp.calendar({
+      input: '#calendar-default',
   });  
 
   function getData(){
