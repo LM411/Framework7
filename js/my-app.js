@@ -133,7 +133,7 @@ $.ajax({
               '<div class="card-content-inner">' +
               '<p><h3>'+data.title.rendered+'</h3></p>' +
                '<p>'+data.content.rendered+'</p>' +
-               '<p class="buttons-row"><a href="'+data.link+'" class="button button-fill color-gray item-link external">Read More</a><a  href="whatsapp://send?text='+data.link+'" style="text-align:center;" class="button button-fill color-gray item-link external">Share Post</a></p>'+
+               '<p class="buttons-row"><a href="'+data.link+'" class="button button-raised button-fill color-teal item-link external" style="font-weight:bold;">Read More</a><a  href="whatsapp://send?text='+data.link+'" style="text-align:center;font-weight:bold;" class="button button-raised button-fill color-teal item-link external">Share Post</a></p>'+
                 // '<p class="color-gray">Views: '+value.link+'</p>' +
               '</div>' +
             '</div>' +
