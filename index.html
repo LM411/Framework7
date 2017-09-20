@@ -24,6 +24,11 @@
 $(document).ready(function() {
   // Initialize your app
   var myApp = new Framework7();
+  
+  function loadURL(url){
+    navigator.app.loadUrl(url, { openExternal:true });
+    return false;
+  } 
 });
 </script>
 
@@ -58,8 +63,8 @@ $(document).ready(function() {
             <div class="navbar">
               <div class="navbar-inner">
                 <div class="left">
-                  <a href="index.html" class="link icon-only">
-                      <i class=""><img src="img/icon.png" style="height:40px;margin-top: 20px"></i>
+                  <a href="#" class="link icon-only">
+                      <i class=""><img src="img/icon.png" style="margin-top: 10px;"></i>
                   </a>
                 </div>
                 <div class="right"><a href="#" class="open-panel link icon-only"><i class="icon icon-bars"></i></a></div>
@@ -83,6 +88,7 @@ $(document).ready(function() {
               </div>
 
               <div id="content-block-main">
+              <a onclick="loadURL('https://selibeng.com/')">Visit Selibeng</a>
                 <!-- Content Here -->
               </div>
               <h1>&nbsp;</h1>

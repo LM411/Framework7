@@ -18,7 +18,7 @@
       Nvulane Nhlapo
       Lehlohonolo Makoti
   </author>
-  <access origin="*"/>
+  
   <plugin name="cordova-plugin-splashscreen" source="npm" />
   <preference name="orientation" value="portrait" />
   <preference name="KeepRunning" value="false"/>
@@ -44,7 +44,21 @@
   <splash platform="android" qualifier="port-xhdpi" src="res/screen/android/screen-xhdpi-portrait.png" />
   
   <!-- <access origin="whatsapp:*" launch-external="yes" /> -->
+  <!-- Allow links to web pages to open in a browser -->
+  <allow-intent href="http://*/*" />
+  <allow-intent href="https://*/*" />
+  <access origin="*selibeng.com" browserOnly="true"/>
+  <!-- Allow SMS links to open messaging app -->
+  <allow-intent href="sms:*" />
+
+  <!-- Allow tel: links to open the dialer -->
+  <allow-intent href="tel:*" />
+
+  <!-- Allow geo: links to open maps -->
+  <allow-intent href="geo:*" />
+
   <allow-intent href="whatsapp:*" />
+  <access origin="*"/>
   <splash src="img/splash.png"/>
   <splash src="audio/splash_sound.mp3"/>
   <icon src="img/icon_.png" />
