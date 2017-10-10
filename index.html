@@ -24,7 +24,6 @@
 $(document).ready(function() {
   // Initialize your app
   var myApp = new Framework7();
-  
   function loadURL(url){
     navigator.app.loadUrl(url, { openExternal:true });
     return false;
@@ -64,7 +63,7 @@ $(document).ready(function() {
               <div class="navbar-inner">
                 <div class="left">
                   <a href="#" class="link icon-only">
-                      <i class=""><img src="img/icon.png" style="margin-top: 10px;"></i>
+                      <i class=""><img src="img/icon.png" style="margin-top: 30%;"></i>
                   </a>
                 </div>
                 <div class="right"><a href="#" class="open-panel link icon-only"><i class="icon icon-bars"></i></a></div>
@@ -88,39 +87,20 @@ $(document).ready(function() {
               </div>
 
               <div id="content-block-main">
-              <a onclick="loadURL('https://selibeng.com/')">Visit Selibeng</a>
                 <!-- Content Here -->
               </div>
               <h1>&nbsp;</h1>
             </div>
-            
-            <!--Bottom toolbar menu
-            <div class="toolbar toolbar-bottom tabbar tabbar-labels">
-              <div class="toolbar-inner">
-                <a href="#" class="tab-link" onclick="about()">
-                    <i class="f7-icons">help</i>
-                    <span class="tabbar-label">Help</span>
-                </a>
-                <a href="#" class="tab-link"  id="calendar-default_1" >
-                    <i class="f7-icons">
-                       today
-                    </i>
-                    <span class="tabbar-label">Calendar</span>
-                </a>
-                <a href="#" class="tab-link active" >
-                    <i class="f7-icons">close_round</i>
-                    <span class="tabbar-label">Close</span>
-                </a>
-              </div>-->
+
             </div>
             <!--Floating button SpeedDial-->
             <div class="speed-dial">
               <a href="#" class="floating-button""><i class="icon icon-plus"></i><i class="icon icon-close"></i></a>
               <div class="speed-dial-buttons">
-               <p class="buttons-row"><button class="button button-raised button-fill color-white"" style="color:gray;margin-left: -70px;"><b>Date</b></button><a href="#" style="margin-right: 10px;margin-left: 10px;"><i id="calendar-default" class="icon material-icons">today</i></a></p>
+               <p class="buttons-row"><a href="#" style="margin-right: 10px;margin-left: 10px;"><i id="calendar-default" class="icon material-icons">today</i></a></p>
 
-                 <p class="buttons-row"><button class="button button-raised button-fill color-white"" style="color:gray;margin-left: -70px;"><b>Share</b></button><a href="whatsapp://send?text=Hey if you want to keep up to date with the latest jobs openings follow this link : https://www.selibeng.com/" style="margin-right: 10px;margin-left: 10px;" class="item-link external"><i class="icon material-icons">share</i></a></p>
-                 <p class="buttons-row"><button class="button button-raised button-fill color-white"" style="color:gray;margin-left: -70px;"><b>Help</b></button><a href="#" style="margin-right: 10px;margin-left: 10px;" data-popup=".popup-doc" class="open-popup"><i class="icon material-icons">help</i></a></p>
+                 <p class="buttons-row"><a href="whatsapp://send?text=Hey if you want to keep up to date with the latest jobs openings follow this link : https://www.selibeng.com/" style="margin-right: 10px;margin-left: 10px;" class="item-link external"><i class="icon material-icons">share</i></a></p>
+                 <p class="buttons-row"><a href="#" style="margin-right: 10px;margin-left: 10px;" data-popup=".popup-doc" class="open-popup"><i class="icon material-icons">help</i></a></p>
               </div>
             </div>
 
