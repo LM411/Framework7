@@ -1,5 +1,13 @@
 // Initialize your app
-  var myApp = new Framework7();
+  var myApp = new Framework7({
+  	cache:true,
+  	onAjaxStart: function (xhr) {
+        myApp.showIndicator();
+    },
+    onAjaxComplete: function (xhr) {
+        myApp.hideIndicator();
+    }
+  });
 
   // Export selectors engine
   var $$ = Dom7;
