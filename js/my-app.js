@@ -114,7 +114,7 @@ $.ajax({
       },
   error: function(error){
       $$('.content-block-main').append('<div class="item-content">' + 
-          '<div class="item-title"><div class="item-media"></div><center><img style="height:350px" src="img/error.png"/><br/><a onClick="refresh()">REFRESH PAGE</a></center></div>');
+          '<div class="item-title"><div class="item-media"></div><center><img style="height:350px" src="img/error.gif"/><br/><a class="button button-raised button-fill color-teal item-link external" style="width:50%;" onClick="location.reload()">No Internet Press to Refresh</a></center></div>');
       console.log(error);
   }
 
@@ -138,17 +138,20 @@ $.ajax({
               '<div class="card-content-inner">' +
               '<p><h3>'+data.title.rendered+'</h3></p>' +
                '<p>'+data.content.rendered+'</p>' +
-               '<p class="buttons-row"><a onclick="window.open("window.open('+data.link+')", "_system");" class="button button-raised button-fill color-teal item-link external" style="font-weight:bold;">Read More</a><a href="'+data.link+'" class="button button-raised button-fill color-teal item-link external" style="font-weight:bold;">Read More</a><a  href="whatsapp://send?text='+data.link+'" style="text-align:center;font-weight:bold;" class="button button-raised button-fill color-teal item-link external">Share Post</a></p>'+
+               '<p class="buttons-row"><a href="'+data.link+'" class="button button-raised button-fill color-teal item-link external" style="font-weight:bold;">Read More</a><a  href="whatsapp://send?text='+data.link+'" style="text-align:center;font-weight:bold;" class="button button-raised button-fill color-teal item-link external">Share Post</a></p>'+
                 // '<p class="color-gray">Views: '+value.link+'</p>' +
               '</div>' +
             '</div>' +
           '<div class="item-inner"><div class="item-title"></div>');
         //console.log(value.title);
       },
+      complete: function(){
+        $('#loader-spinner').hide();
+      },
       error: function(error){
           $$('.post-content-block').append('<div class="item-content">' + 
-              '<div class="item-title"><div class="item-media"><i class="icon icon-f7"></i></div> there is a problem loading data, you might wanna check you internet connection and retry.</div>');
-          console.log(error);
+              '<div class="item-title"><div class="item-media"></div><center><img style="height:350px" src="img/error.gif"/><br/><a class="button button-raised button-fill color-teal item-link external" style="width:50%;" onClick="location.reload()">No Internet Press to Refresh</a></center></div>');
+      console.log(error);
       }
   });
 };
