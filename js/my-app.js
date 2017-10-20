@@ -185,3 +185,32 @@ $('#search-input').keyup( function(){
 $('.ks-facebook-date').text(function () {
     return $(this).text().replace('T', 't'); 
 });
+
+//Check update
+var updateVersion = 1;
+var currentVersion = 0;
+var updateURL = "http://localhost:8080/framework7";
+$.ajax({
+  url: updateURL + '/app-update.json',
+  dataType: 'json',
+  success: function(data){
+        updateVersion = data.jUpdateVersion;
+        if(updateVersion > currentVersion){
+	      myApp.addNotification({
+	        title: 'New Update Available',
+	        closeIcon: true,
+	        closeOnClick: true,
+	          message: '<a href="https://www.selibeng.com/spane.apk" class="link external">Click here to Download new version App</a>',
+	          button: {
+	            text: 'Close',
+	            color: 'white'
+	          }
+	      });
+	   }
+	   console.log(updateVersion);
+  },
+  error: function(error){
+     console.log(error);
+  }
+
+});
