@@ -148,6 +148,9 @@ $.ajax({
             '</div>' +
           '<div class="item-inner"><div class="item-title"></div>');
         //console.log(value.title);
+        $('.ks-facebook-date').text(function () {
+		    return $(this).text().replace('T', ' '); 
+		});
       },
       complete: function(){
         $('#loader-spinner').hide();
@@ -188,15 +191,10 @@ $('#search-input').keyup( function(){
    }
 });
 
-
-$('.ks-facebook-date').text(function () {
-    return $(this).text().replace('T', 't'); 
-});
-
 //Check update
-var updateVersion = 1;
-var currentVersion = 0;
-var updateURL = "http://localhost:8080/framework7";
+var updateVersion = 0;
+var currentVersion = 0; //need to connect to device API (suspended for now)
+var updateURL = window.location;
 $.ajax({
   url: updateURL + '/app-params.json',
   dataType: 'json',
@@ -207,7 +205,7 @@ $.ajax({
 	        title: 'New Update Available',
 	        closeIcon: true,
 	        closeOnClick: true,
-	          message: '<a href="https://www.selibeng.com/spane.apk" class="link external">Click here to Download new version App</a>',
+	          message: '<a href="http://spane.nsgplesotho.com/spane.apk" class="link external">Click here to <b>Download</b> new App version</a>',
 	          button: {
 	            text: 'Close',
 	            color: 'white'
