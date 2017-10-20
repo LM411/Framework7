@@ -107,6 +107,10 @@ $.ajax({
           '<div class="item-inner"><div class="item-title"></div>');
        //console.log(parseObject.profession);
         //console.log(value.id);
+        //Remove T from Date format
+        $('.ks-facebook-date').text(function () {
+    			return $(this).text().replace('T', ' '); 
+		});
       });
   },
   complete: function(){
@@ -194,7 +198,7 @@ var updateVersion = 1;
 var currentVersion = 0;
 var updateURL = "http://localhost:8080/framework7";
 $.ajax({
-  url: updateURL + '/app-update.json',
+  url: updateURL + '/app-params.json',
   dataType: 'json',
   success: function(data){
         updateVersion = data.jUpdateVersion;
