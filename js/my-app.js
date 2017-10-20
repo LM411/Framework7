@@ -1,6 +1,6 @@
 // Initialize your app
   var myApp = new Framework7({
-  	cache:true
+  		cache:true
   });
 
   // Export selectors engine
