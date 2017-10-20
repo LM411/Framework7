@@ -1,5 +1,7 @@
 // Initialize your app
-  var myApp = new Framework7();
+  var myApp = new Framework7({
+  	cache:true
+  });
 
   // Export selectors engine
   var $$ = Dom7;

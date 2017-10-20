@@ -37,7 +37,7 @@
 }
 
 /* Center the loader */
-#loader,  #loader-image img{
+#loader{
   position: absolute;
   left: 50%;
   top: 50%;
@@ -88,9 +88,20 @@
   display: none;
 }
 
-/*#loader-image img{
-   display: block;
-    margin:auto auto auto auto;
-    top: 0%;
-    position: absolute;
-}*/
+#loader-image img{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #009688;
+  border-bottom: 16px solid #009688;
+  width: 150px;
+  height: 150px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
