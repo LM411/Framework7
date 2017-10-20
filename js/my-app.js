@@ -1,13 +1,5 @@
 // Initialize your app
-  var myApp = new Framework7({
-  	cache:true,
-  	onAjaxStart: function (xhr) {
-        myApp.showIndicator();
-    },
-    onAjaxComplete: function (xhr) {
-        myApp.hideIndicator();
-    }
-  });
+  var myApp = new Framework7();
 
   // Export selectors engine
   var $$ = Dom7;
@@ -97,9 +89,8 @@ $.ajax({
       $.each(data, function(index, value) {
         $$('#content-block-main').append('<div class="card ks-facebook-card">' +
           '<div class="card-header">' +
-          '<div class="ks-facebook-avatar"><img src="img/selibeng.png" width="34" height="34"/></div>'+
-              '<div class="ks-facebook-avatar"><img src="img/lescass.png" style="margin-right:5px" width="34" height="34"/></div>' +
-              '<div class="ks-facebook-name">Selibeng.com & LesothoCareerAssitant</div>' +
+              '<div class="ks-facebook-avatar"><img src="img/selibeng.png" width="34" height="34"/></div>' +
+              '<div class="ks-facebook-name">Selibeng.com</div>' +
               '<div class="ks-facebook-date">'+value.date+'</div>' +
             '</div>' +
             '<div class="card-content">' + 
@@ -116,6 +107,9 @@ $.ajax({
         //console.log(value.id);
       });
   },
+  complete: function(){
+        $('#loader-image').hide();
+      },
   error: function(error){
       $$('.content-block-main').append('<div class="item-content">' + 
           '<div class="item-title"><div class="item-media"></div><center><img style="height:350px" src="img/error.png"/><br/><a onClick="refresh()">REFRESH PAGE</a></center></div>');
@@ -142,7 +136,7 @@ $.ajax({
               '<div class="card-content-inner">' +
               '<p><h3>'+data.title.rendered+'</h3></p>' +
                '<p>'+data.content.rendered+'</p>' +
-               '<p class="buttons-row"><a href="'+data.link+'" class="button button-raised button-fill color-teal item-link external" style="font-weight:bold;">Read More</a><a  href="whatsapp://send?text='+data.link+'" style="text-align:center;font-weight:bold;" class="button button-raised button-fill color-teal item-link external">Share Post</a></p>'+
+               '<p class="buttons-row"><a onclick="window.open("window.open('+data.link+')", "_system");" class="button button-raised button-fill color-teal item-link external" style="font-weight:bold;">Read More</a><a href="'+data.link+'" class="button button-raised button-fill color-teal item-link external" style="font-weight:bold;">Read More</a><a  href="whatsapp://send?text='+data.link+'" style="text-align:center;font-weight:bold;" class="button button-raised button-fill color-teal item-link external">Share Post</a></p>'+
                 // '<p class="color-gray">Views: '+value.link+'</p>' +
               '</div>' +
             '</div>' +
@@ -183,4 +177,9 @@ $('#search-input').keyup( function(){
           }
       });
    }
+});
+
+
+$('.ks-facebook-date').text(function () {
+    return $(this).text().replace('T', 't'); 
 });
