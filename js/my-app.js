@@ -48,6 +48,11 @@ var getUrlParameter = function getUrlParameter(sParam) {
     }
 };
 
+function fDate(){
+	 $('.ks-facebook-date').text(function () {
+    			return $(this).text().replace('T', ' '); 
+		});
+}
 
 // Generate dynamic page
 var dynamicPageIndex = 0;
@@ -108,9 +113,7 @@ $.ajax({
        //console.log(parseObject.profession);
         //console.log(value.id);
         //Remove T from Date format
-        $('.ks-facebook-date').text(function () {
-    			return $(this).text().replace('T', ' '); 
-		});
+        fDate();
       });
   },
   complete: function(){
@@ -148,9 +151,8 @@ $.ajax({
             '</div>' +
           '<div class="item-inner"><div class="item-title"></div>');
         //console.log(value.title);
-        $('.ks-facebook-date').text(function () {
-		    return $(this).text().replace('T', ' '); 
-		});
+        fDate();
+        $$('a').addClass('external');
       },
       complete: function(){
         $('#loader-spinner').hide();
@@ -185,7 +187,8 @@ $('#search-input').keyup( function(){
           message: 'No Results Found for your Search',
           button: {
             text: 'Close',
-            color: 'white'
+            color: 'white',
+            close:true
           }
       });
    }
@@ -197,7 +200,6 @@ var currentVersion = 0; //need to connect to device API (suspended for now)
 var updateURL = window.location;
 $.ajax({
   url: updateURL + '/app-params.json',
-  dataType: 'json',
   success: function(data){
         updateVersion = data.jUpdateVersion;
         if(updateVersion > currentVersion){
@@ -205,10 +207,12 @@ $.ajax({
 	        title: 'New Update Available',
 	        closeIcon: true,
 	        closeOnClick: true,
+	        close:true,
 	          message: '<a href="http://spane.nsgplesotho.com/spane.apk" class="link external">Click here to <b>Download</b> new App version</a>',
 	          button: {
 	            text: 'Close',
-	            color: 'white'
+	            color: 'white',
+	            close:true
 	          }
 	      });
 	   }
@@ -219,3 +223,5 @@ $.ajax({
   }
 
 });
+
+$$('a').addClass('external');
