@@ -116,8 +116,8 @@ $.ajax({
         $('#loader-image').hide();
       },
   error: function(error){
-      $$('.content-block-main').append('<div class="item-content">' + 
-          '<div class="item-title"><div class="item-media"></div><center><img style="height:350px" src="img/error.gif"/><br/><a class="button button-raised button-fill color-teal item-link external" style="width:50%;" onClick="location.reload()">No Internet Press to Refresh</a></center></div>');
+          $$('#content-block-main').append('<div class="item-content">' + 
+              '<div class="item-title"><div class="item-media"></div><center><img style="height:350px" src="img/error.gif"/><br/><a class="button button-raised button-fill color-teal item-link external" style="width:50%;" onClick="location.reload()">No Internet Press to Refresh</a></center></div>');
       console.log(error);
   }
 
