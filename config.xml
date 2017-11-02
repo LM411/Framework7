@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <widget xmlns   = "http://www.w3.org/ns/widgets"
     xmlns:gap   = "http://phonegap.com/ns/1.0"
-    id          = "www.nsgplesotho.com"
+    id          = "www.spaneapp.com"
     versionCode = "1" 
     version     = "1.0.0" >
 
@@ -13,7 +13,7 @@
       A job seeking platform to help better your chances for that dream job
   </description>
 
-  <author href="https://nsgplesotho.com" email="lehlohonolomakoti@nsgplesotho.com">
+  <author href="www.spaneapp.com" email="helpdesk@spaneapp.com">
       Neko Ntsane
       Nvulane Nhlapo
       Lehlohonolo Makoti
@@ -35,7 +35,6 @@
   <!-- <plugin name="cordova-plugin-network-information" source="npm" spec="1.0.1" /> -->
 
   <plugin name="cordova-universal-clipboard" source="npm"/>
-  <plugin name="phonegap-plugin-barcodescanner" source="npm"/>
   <plugin name="cordova-plugin-x-toast" />
 
   <splash platform="android" qualifier="port-ldpi" src="res/screen/android/screen-ldpi-portrait.png" />
